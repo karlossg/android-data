@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDICAL DATABASE | ANDROID DATA NETWORK</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400&family=Share+Tech+Mono&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-cyan: #00ffcc;
+            --accent-magenta: #ff00aa;
+            --accent-red: #ff4444;
+            --accent-orange: #ff9933;
+            --accent-yellow: #ffcc00;
+            --accent-green: #00ff88;
+            --bg-dark: #0a0a1a;
+            --bg-panel: #000f23;
+            --text-primary: #ffffff;
+            --text-secondary: #aaddff;
+        }
+
+        body {
+            font-family: 'Orbitron', 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 60%, #16213e 100%);
+            color: var(--primary-cyan);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            max-width: 1400px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: rgba(0, 15, 35, 0.8);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 8px;
+        }
+
+        .site-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            text-shadow: 0 0 10px var(--primary-cyan);
+            letter-spacing: 2px;
+        }
+
+        .site-logo span {
+            color: var(--accent-magenta);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Share Tech Mono', monospace;
+            color: rgba(0, 255, 204, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+            background: rgba(0, 255, 204, 0.1);
+            text-shadow: 0 0 5px var(--primary-cyan);
+        }
+
+        /* Page Title */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--accent-magenta), var(--primary-cyan));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { filter: drop-shadow(0 0 10px var(--primary-cyan)); }
+            to { filter: drop-shadow(0 0 20px var(--accent-magenta)); }
+        }
+
+        .page-subtitle {
+            font-family: 'Share Tech Mono', monospace;
+            color: rgba(0, 255, 204, 0.6);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+        }
+
+        /* Database Status Bar */
+        .database-status {
+            max-width: 1400px;
+            margin: 0 auto 30px auto;
+            background: rgba(0, 15, 35, 0.9);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 8px;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Records Grid */
+        .records-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        /* Medical Datapad Card */
+        .datapad {
+            background: rgba(0, 15, 35, 0.97);
+            border: 3px solid var(--primary-cyan);
+            border-radius: 12px;
+            box-shadow:
+                0 0 50px rgba(0, 255, 204, 0.3),
+                inset 0 0 60px rgba(0, 0, 0, 0.9);
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .datapad::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(90deg, transparent 49%, rgba(0,255,204,0.04) 50%, transparent 51%),
+                linear-gradient(0deg, transparent 49%, rgba(0,255,204,0.04) 50%, transparent 51%);
+            background-size: 50px 50px;
+            animation: scanlines 4s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .scan-beam {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--primary-cyan), var(--accent-magenta), var(--primary-cyan), transparent);
+            animation: scanbeam 6s linear infinite;
+            z-index: 2;
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(50px); }
+        }
+
+        @keyframes scanbeam {
+            0% { top: -100%; }
+            50%, 100% { top: 100%; }
+        }
+
+        .status-bar {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            background: rgba(0, 255, 204, 0.15);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            border: 1px solid rgba(0, 255, 204, 0.5);
+            animation: statusPulse 3s ease-in-out infinite;
+            z-index: 3;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-bar.warning {
+            color: var(--accent-orange);
+            border-color: var(--accent-orange);
+            background: rgba(255, 153, 51, 0.15);
+        }
+
+        .status-bar.critical {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+            background: rgba(255, 68, 68, 0.15);
+            animation: criticalPulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(0,255,204,0.3); }
+            50% { box-shadow: 0 0 25px rgba(0,255,204,0.6); }
+        }
+
+        @keyframes criticalPulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(255,68,68,0.4); }
+            50% { box-shadow: 0 0 30px rgba(255,68,68,0.8); }
+        }
+
+        .header {
+            background: linear-gradient(90deg, var(--primary-cyan), var(--accent-magenta), var(--primary-cyan));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 26px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 3;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 10px var(--primary-cyan)); }
+            to { filter: drop-shadow(0 0 20px var(--accent-magenta)); }
+        }
+
+        .classification {
+            background: rgba(255, 0, 170, 0.15);
+            border: 2px solid rgba(255, 0, 170, 0.4);
+            padding: 18px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            font-size: 12px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 3;
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .classification strong {
+            color: var(--accent-magenta);
+        }
+
+        .section {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .section-title {
+            color: var(--primary-cyan);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid rgba(0, 255, 204, 0.4);
+            padding-bottom: 8px;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 10px 20px;
+            font-size: 13px;
+        }
+
+        .data-label {
+            font-weight: 700;
+            color: var(--accent-magenta);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .data-value {
+            color: var(--text-primary);
+            font-family: 'Roboto Mono', monospace;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            font-size: 13px;
+        }
+
+        .data-value.highlight {
+            color: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+        }
+
+        .data-value.warning {
+            color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        .data-value.critical {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+            font-weight: 700;
+        }
+
+        .data-value.success {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 68, 68, 0.2), rgba(255, 0, 0, 0.1));
+            border: 3px solid var(--accent-red);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+            animation: warningPulse 2.5s infinite;
+            position: relative;
+            z-index: 3;
+        }
+
+        .warning-box.orange {
+            background: linear-gradient(135deg, rgba(255, 153, 51, 0.2), rgba(255, 100, 0, 0.1));
+            border-color: var(--accent-orange);
+        }
+
+        .warning-box.yellow {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.2), rgba(200, 150, 0, 0.1));
+            border-color: var(--accent-yellow);
+        }
+
+        .warning-text {
+            font-weight: 900;
+            font-size: 18px;
+            background: linear-gradient(90deg, var(--accent-red), #ff8888, var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .warning-box.orange .warning-text {
+            background: linear-gradient(90deg, var(--accent-orange), #ffcc88, var(--accent-orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .warning-box.yellow .warning-text {
+            background: linear-gradient(90deg, var(--accent-yellow), #ffee88, var(--accent-yellow));
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .warning-detail {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ffaaaa;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .warning-box.orange .warning-detail {
+            color: #ffcc99;
+        }
+
+        .warning-box.yellow .warning-detail {
+            color: #ffee99;
+        }
+
+        @keyframes warningPulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,68,68,0.4); }
+            50% { box-shadow: 0 0 40px rgba(255,68,68,0.7); }
+        }
+
+        /* Vitals Section */
+        .vitals-container {
+            margin-top: 15px;
+        }
+
+        .vital-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+
+        .vital-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-magenta);
+            text-transform: uppercase;
+            width: 120px;
+            flex-shrink: 0;
+        }
+
+        .vital-bar {
+            flex: 1;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 204, 0.2);
+        }
+
+        .vital-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+
+        .vital-fill.excellent {
+            background: linear-gradient(90deg, var(--accent-green), #00cc6a);
+            box-shadow: 0 0 10px var(--accent-green);
+        }
+
+        .vital-fill.good {
+            background: linear-gradient(90deg, var(--primary-cyan), #00cccc);
+            box-shadow: 0 0 10px var(--primary-cyan);
+        }
+
+        .vital-fill.moderate {
+            background: linear-gradient(90deg, var(--accent-yellow), #cc9900);
+            box-shadow: 0 0 10px var(--accent-yellow);
+        }
+
+        .vital-fill.poor {
+            background: linear-gradient(90deg, var(--accent-orange), #cc6600);
+            box-shadow: 0 0 10px var(--accent-orange);
+        }
+
+        .vital-fill.critical {
+            background: linear-gradient(90deg, var(--accent-red), #cc0033);
+            box-shadow: 0 0 10px var(--accent-red);
+            animation: vitalPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes vitalPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .vital-value {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 12px;
+            color: var(--text-primary);
+            width: 50px;
+            text-align: right;
+        }
+
+        /* Cybernetics List */
+        .cyber-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .cyber-item {
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 255, 204, 0.2);
+            border-radius: 5px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+        }
+
+        .cyber-name {
+            color: var(--text-primary);
+        }
+
+        .cyber-status {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cyber-status.functional {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+        }
+
+        .cyber-status.degraded {
+            background: rgba(255, 153, 51, 0.2);
+            color: var(--accent-orange);
+            border: 1px solid var(--accent-orange);
+        }
+
+        .cyber-status.offline {
+            background: rgba(255, 68, 68, 0.2);
+            color: var(--accent-red);
+            border: 1px solid var(--accent-red);
+        }
+
+        /* Notes Box */
+        .notes-box {
+            background: rgba(0, 255, 204, 0.05);
+            border-left: 4px solid var(--primary-cyan);
+            padding: 15px;
+            margin-top: 15px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .notes-box .note-entry {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+        }
+
+        .notes-box .note-entry:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .notes-box .note-date {
+            font-size: 10px;
+            color: rgba(0, 255, 204, 0.5);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* Footer */
+        .datapad-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(0, 255, 204, 0.3);
+            font-size: 10px;
+            color: rgba(0, 255, 204, 0.5);
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .crypto-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 9px;
+            text-transform: uppercase;
+        }
+
+        /* Site Footer */
+        .site-footer {
+            max-width: 1400px;
+            margin: 50px auto 0 auto;
+            padding: 25px;
+            background: rgba(0, 15, 35, 0.8);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 11px;
+            color: rgba(0, 255, 204, 0.5);
+            letter-spacing: 1px;
+        }
+
+        .footer-text span {
+            color: var(--primary-cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .datapad {
+                padding: 20px;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+                letter-spacing: 2px;
+            }
+
+            .header {
+                font-size: 18px;
+            }
+
+            .vital-row {
+                flex-wrap: wrap;
+            }
+
+            .vital-label {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Site Header -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo">ANDROID<span>DATA</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="medical-records.html" class="active">Medical Records</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1 class="page-title">Medical Database</h1>
+        <p class="page-subtitle">// Classified Personnel Health Records //</p>
+    </div>
+
+    <!-- Database Status -->
+    <div class="database-status">
+        <div class="status-item">
+            <span class="status-dot"></span>
+            <span>DATABASE: ONLINE</span>
+        </div>
+        <div class="status-item">
+            <span>RECORDS LOADED: 5</span>
+        </div>
+        <div class="status-item">
+            <span>LAST SYNC: 2200.08.14 // 04:17 CET</span>
+        </div>
+        <div class="status-item">
+            <span>CLEARANCE: OMEGA-3</span>
+        </div>
+    </div>
+
+    <!-- Records Container -->
+    <div class="records-container">
+
+        <!-- RECORD 1: TAURON McCLICCE -->
+        <div class="datapad">
+            <div class="scan-beam"></div>
+            <div class="status-bar">STATUS: ACTIVE DUTY</div>
+
+            <h2 class="header">[MED/7C-19-ALPHA-001] TAURON McCLICCE</h2>
+
+            <div class="classification">
+                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 2<br>
+                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
+                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
+                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+            </div>
+
+            <div class="section">
+                <div class="section-title">1. Subject Identification</div>
+                <div class="data-grid">
+                    <div class="data-label">Full Name:</div>
+                    <div class="data-value">Tauron McClicce</div>
+                    <div class="data-label">Subject ID:</div>
+                    <div class="data-value">7C-19-A-001</div>
+                    <div class="data-label">Species:</div>
+                    <div class="data-value">Human (Baseline)</div>
+                    <div class="data-label">Blood Type:</div>
+                    <div class="data-value">O-Negative (Universal)</div>
+                    <div class="data-label">Age:</div>
+                    <div class="data-value">34 Standard Years</div>
+                    <div class="data-label">Status:</div>
+                    <div class="data-value success">CLEARED FOR OPERATIONS</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">2. Biometric Assessment</div>
+                <div class="vitals-container">
+                    <div class="vital-row">
+                        <span class="vital-label">Neural Activity</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 92%;"></div></div>
+                        <span class="vital-value">92%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Cardiac Function</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 88%;"></div></div>
+                        <span class="vital-value">88%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Respiratory</span>
+                        <div class="vital-bar"><div class="vital-fill good" style="width: 85%;"></div></div>
+                        <span class="vital-value">85%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Immune Response</span>
+                        <div class="vital-bar"><div class="vital-fill good" style="width: 79%;"></div></div>
+                        <span class="vital-value">79%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Cellular Regen</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 94%;"></div></div>
+                        <span class="vital-value">94%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Cybernetic Augmentations</div>
+                <ul class="cyber-list">
+                    <li class="cyber-item">
+                        <span class="cyber-name">Kiroshi Optics Mk.III (Both Eyes)</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Dermal Armor Weave (Torso)</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Reflex Boosters (Spinal)</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Medical Notes</div>
+                <div class="notes-box">
+                    <div class="note-entry">
+                        <span class="note-date">[2200.08.10] Dr. Helena Voss</span>
+                        Subject shows exceptional recovery from recent field injuries. Cellular regeneration rate above baseline - possibly linked to genetic optimization from childhood treatments. Recommend continued monitoring of enhanced healing factor.
+                    </div>
+                    <div class="note-entry">
+                        <span class="note-date">[2200.07.22] Dr. Marcus Chen</span>
+                        Cybernetic integration stable. No signs of rejection or cyberpsychosis markers. Subject maintains healthy psychological profile despite high augmentation load.
+                    </div>
+                </div>
+            </div>
+
+            <div class="datapad-footer">
+                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div class="crypto-bar">
+                    <span>[CRC: 8B2F-A001]</span>
+                    <span>[ENCRYPTION: AES-512]</span>
+                    <span>[AUTH: BIO-TM-19]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RECORD 2: BERNAL DIAZ DE CASTILLO -->
+        <div class="datapad">
+            <div class="scan-beam"></div>
+            <div class="status-bar warning">STATUS: MEDICAL OBSERVATION</div>
+
+            <h2 class="header">[MED/7C-19-BETA-002] BERNAL DIAZ DE CASTILLO</h2>
+
+            <div class="classification">
+                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 2<br>
+                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
+                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
+                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+            </div>
+
+            <div class="section">
+                <div class="section-title">1. Subject Identification</div>
+                <div class="data-grid">
+                    <div class="data-label">Full Name:</div>
+                    <div class="data-value">Bernal Diaz de Castillo</div>
+                    <div class="data-label">Subject ID:</div>
+                    <div class="data-value">7C-19-B-002</div>
+                    <div class="data-label">Species:</div>
+                    <div class="data-value">Human (Baseline)</div>
+                    <div class="data-label">Blood Type:</div>
+                    <div class="data-value">A-Positive</div>
+                    <div class="data-label">Age:</div>
+                    <div class="data-value">41 Standard Years</div>
+                    <div class="data-label">Status:</div>
+                    <div class="data-value warning">RESTRICTED DUTY - MEDICAL</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">2. Biometric Assessment</div>
+                <div class="vitals-container">
+                    <div class="vital-row">
+                        <span class="vital-label">Neural Activity</span>
+                        <div class="vital-bar"><div class="vital-fill good" style="width: 78%;"></div></div>
+                        <span class="vital-value">78%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Cardiac Function</span>
+                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 65%;"></div></div>
+                        <span class="vital-value">65%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Respiratory</span>
+                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 62%;"></div></div>
+                        <span class="vital-value">62%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Immune Response</span>
+                        <div class="vital-bar"><div class="vital-fill poor" style="width: 48%;"></div></div>
+                        <span class="vital-value">48%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Cellular Regen</span>
+                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 55%;"></div></div>
+                        <span class="vital-value">55%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box orange">
+                <div class="warning-text">CHRONIC COMBAT FATIGUE SYNDROME</div>
+                <div class="warning-detail">Extended combat operations have resulted in cumulative tissue damage</div>
+                <div class="warning-detail" style="font-size: 14px; margin-top: 8px;">REGENERATIVE THERAPY RECOMMENDED</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Cybernetic Augmentations</div>
+                <ul class="cyber-list">
+                    <li class="cyber-item">
+                        <span class="cyber-name">Militech Gorilla Arms (Both)</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Subdermal Armor Plating (Full Body)</span>
+                        <span class="cyber-status degraded">Degraded</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Adrenaline Booster Implant</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Pain Editor (Neural)</span>
+                        <span class="cyber-status degraded">Degraded</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Medical Notes</div>
+                <div class="notes-box">
+                    <div class="note-entry">
+                        <span class="note-date">[2200.08.12] Dr. Helena Voss</span>
+                        Subject's pain editor showing signs of neural pathway degradation. Extended use has created dependency issues. Recommending gradual reduction protocol combined with traditional pain management.
+                    </div>
+                    <div class="note-entry">
+                        <span class="note-date">[2200.08.01] Dr. Yuki Tanaka</span>
+                        Subdermal armor plating requires maintenance. Several panels showing micro-fractures from repeated impacts. Scheduling replacement surgery for next available slot. Subject cleared for light duty only until repairs complete.
+                    </div>
+                </div>
+            </div>
+
+            <div class="datapad-footer">
+                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div class="crypto-bar">
+                    <span>[CRC: 9D4E-B002]</span>
+                    <span>[ENCRYPTION: AES-512]</span>
+                    <span>[AUTH: BIO-BD-41]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RECORD 3: FILAS KOWALSKY -->
+        <div class="datapad">
+            <div class="scan-beam"></div>
+            <div class="status-bar">STATUS: ACTIVE DUTY</div>
+
+            <h2 class="header">[MED/7C-19-GAMMA-003] FILAS KOWALSKY</h2>
+
+            <div class="classification">
+                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 3<br>
+                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
+                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
+                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+            </div>
+
+            <div class="section">
+                <div class="section-title">1. Subject Identification</div>
+                <div class="data-grid">
+                    <div class="data-label">Full Name:</div>
+                    <div class="data-value">Filas Kowalsky</div>
+                    <div class="data-label">Subject ID:</div>
+                    <div class="data-value">7C-19-G-003</div>
+                    <div class="data-label">Species:</div>
+                    <div class="data-value">Human (Gene-Modified)</div>
+                    <div class="data-label">Blood Type:</div>
+                    <div class="data-value">B-Negative (Synthetic Plasma Compatible)</div>
+                    <div class="data-label">Age:</div>
+                    <div class="data-value">28 Standard Years</div>
+                    <div class="data-label">Status:</div>
+                    <div class="data-value success">CLEARED FOR OPERATIONS</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">2. Biometric Assessment</div>
+                <div class="vitals-container">
+                    <div class="vital-row">
+                        <span class="vital-label">Neural Activity</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 96%;"></div></div>
+                        <span class="vital-value">96%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Cardiac Function</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 91%;"></div></div>
+                        <span class="vital-value">91%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Respiratory</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 89%;"></div></div>
+                        <span class="vital-value">89%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Immune Response</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 95%;"></div></div>
+                        <span class="vital-value">95%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Cellular Regen</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 97%;"></div></div>
+                        <span class="vital-value">97%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Genetic Modifications</div>
+                <div class="data-grid">
+                    <div class="data-label">Mod Class:</div>
+                    <div class="data-value highlight">Generation 2 Enhancement Package</div>
+                    <div class="data-label">Enhancements:</div>
+                    <div class="data-value">Enhanced Immune System, Accelerated Healing, Toxin Resistance</div>
+                    <div class="data-label">Stability:</div>
+                    <div class="data-value success">STABLE - No Degradation Detected</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Cybernetic Augmentations</div>
+                <ul class="cyber-list">
+                    <li class="cyber-item">
+                        <span class="cyber-name">NetWatch ICE Breaker Suite (Cranial)</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Monowire (Right Forearm)</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">5. Medical Notes</div>
+                <div class="notes-box">
+                    <div class="note-entry">
+                        <span class="note-date">[2200.08.08] Dr. Marcus Chen</span>
+                        Genetic modifications remain stable. Subject's enhanced immune response continues to exceed baseline parameters. Recommend bi-annual monitoring for any signs of genetic drift.
+                    </div>
+                    <div class="note-entry">
+                        <span class="note-date">[2200.07.15] Dr. Helena Voss</span>
+                        NetRunner implants showing optimal performance. No signs of black ICE exposure damage. Subject maintains excellent neural health despite frequent net diving activities.
+                    </div>
+                </div>
+            </div>
+
+            <div class="datapad-footer">
+                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div class="crypto-bar">
+                    <span>[CRC: 2A7C-G003]</span>
+                    <span>[ENCRYPTION: AES-512]</span>
+                    <span>[AUTH: BIO-FK-28]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RECORD 4: VINCE SMITH -->
+        <div class="datapad">
+            <div class="scan-beam"></div>
+            <div class="status-bar critical">STATUS: CRITICAL MONITORING</div>
+
+            <h2 class="header">[MED/7C-19-DELTA-004] VINCE SMITH</h2>
+
+            <div class="classification">
+                <strong>CLASSIFICATION:</strong> SECRET - LEVEL 4 (OMEGA CLEARANCE REQUIRED)<br>
+                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - PSYCHOPARTICLE CARRIER<br>
+                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
+                <strong>FACILITY:</strong> SECTOR IZ-7, CRYOGENIC CAPSULE MODULE
+            </div>
+
+            <div class="section">
+                <div class="section-title">1. Subject Identification</div>
+                <div class="data-grid">
+                    <div class="data-label">Full Name:</div>
+                    <div class="data-value">Vince Smith</div>
+                    <div class="data-label">Subject ID:</div>
+                    <div class="data-value">7C-19-D-004</div>
+                    <div class="data-label">Species:</div>
+                    <div class="data-value critical">Human (Compromised - Psychoparticle Carrier)</div>
+                    <div class="data-label">Blood Type:</div>
+                    <div class="data-value warning">AB-Positive (CONTAMINATED)</div>
+                    <div class="data-label">Age:</div>
+                    <div class="data-value">31 Standard Years</div>
+                    <div class="data-label">Status:</div>
+                    <div class="data-value critical">PERMANENT ISOLATION / CRYO-STASIS</div>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-text">PROGRESSIVE GENETIC DEGRADATION</div>
+                <div class="warning-detail">Psychoparticle Active - Low Initial Dose</div>
+                <div class="warning-detail" style="font-size: 16px; margin-top: 8px;">SLOW ORGANISM DETERIORATION IN PROGRESS</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">2. Infection Circumstances</div>
+                <div class="data-grid">
+                    <div class="data-label">Cause:</div>
+                    <div class="data-value">Accidental Operational Incident</div>
+                    <div class="data-label">Incident Class:</div>
+                    <div class="data-value warning">Protocol Level 2</div>
+                </div>
+                <div style="margin-top: 15px; padding: 15px; background: rgba(255, 0, 170, 0.15); border-left: 4px solid #ff00aa; font-size: 12px; line-height: 1.7; font-family: 'Roboto Mono', monospace;">
+                    Contact with unsecured research material during operational procedure.<br>
+                    Incident classified as Protocol Level 2. No evidence of intentional exposure.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Psychoparticle Characteristics</div>
+                <div class="data-grid">
+                    <div class="data-label">Profile:</div>
+                    <div class="data-value">Programmed Genoidiotic</div>
+                    <div class="data-label">Effects:</div>
+                    <div class="data-value critical">Integration with Host Genome</div>
+                    <div class="data-label">Affected Areas:</div>
+                    <div class="data-value">Highly Vascularized Tissues + Nervous System</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Life Prognosis</div>
+                <div class="data-grid">
+                    <div class="data-label">Survival Time:</div>
+                    <div class="data-value critical" style="font-size: 16px; font-weight: 900;">9-12 MONTHS</div>
+                    <div class="data-label">Conditions:</div>
+                    <div class="data-value">Outside Cryogenic Capsule</div>
+                    <div class="data-label">Current State:</div>
+                    <div class="data-value highlight">CRYO-STABILIZED (Profile CRYO-2)</div>
+                </div>
+                <div style="margin-top: 15px; font-size: 12px; color: #ff8888; font-family: 'Roboto Mono', monospace;">
+                    Accelerated tissue degeneration upon awakening. Terminal phase: rapid collapse of vital parameters.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">5. Operational Recommendations</div>
+                <div class="notes-box" style="border-color: var(--accent-red);">
+                    <ul style="list-style: none;">
+                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-cyan);">></span>
+                            Maintain in cryo-stabilization - minimize awakening cycles
+                        </li>
+                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-cyan);">></span>
+                            Upon awakening: full real-time neurogenetic monitoring required
+                        </li>
+                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--accent-red);">X</span>
+                            <strong style="color: var(--accent-red);">PROHIBITED:</strong> Extraction attempts outside security facility
+                        </li>
+                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
+                            <span style="position: absolute; left: 0; color: var(--primary-cyan);">></span>
+                            Experimental procedures only under controlled conditions
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="datapad-footer">
+                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/IZ-7 | COPYING AND DISTRIBUTION FORBIDDEN</div>
+                <div class="crypto-bar">
+                    <span>[CRC: 7A9F-D004]</span>
+                    <span>[ENCRYPTION: AES-512]</span>
+                    <span>[AUTH: BIO-QK-19]</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RECORD 5: REX -->
+        <div class="datapad">
+            <div class="scan-beam"></div>
+            <div class="status-bar">STATUS: ACTIVE DUTY</div>
+
+            <h2 class="header">[MED/7C-19-EPSILON-005] REX</h2>
+
+            <div class="classification">
+                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 2<br>
+                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
+                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
+                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+            </div>
+
+            <div class="section">
+                <div class="section-title">1. Subject Identification</div>
+                <div class="data-grid">
+                    <div class="data-label">Designation:</div>
+                    <div class="data-value">Rex</div>
+                    <div class="data-label">Subject ID:</div>
+                    <div class="data-value">7C-19-E-005</div>
+                    <div class="data-label">Species:</div>
+                    <div class="data-value highlight">Bioroid (Model: LB-7 "Liberation" Series)</div>
+                    <div class="data-label">Serial Number:</div>
+                    <div class="data-value">LB7-REX-4419-NLA</div>
+                    <div class="data-label">Activation Date:</div>
+                    <div class="data-value">2195.03.17</div>
+                    <div class="data-label">Status:</div>
+                    <div class="data-value success">CLEARED FOR OPERATIONS</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">2. System Diagnostics</div>
+                <div class="vitals-container">
+                    <div class="vital-row">
+                        <span class="vital-label">Core Processor</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 98%;"></div></div>
+                        <span class="vital-value">98%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Neural Network</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 94%;"></div></div>
+                        <span class="vital-value">94%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Biosynthetic Tissue</span>
+                        <div class="vital-bar"><div class="vital-fill good" style="width: 82%;"></div></div>
+                        <span class="vital-value">82%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Power Core</span>
+                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 91%;"></div></div>
+                        <span class="vital-value">91%</span>
+                    </div>
+                    <div class="vital-row">
+                        <span class="vital-label">Directive Compliance</span>
+                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 67%;"></div></div>
+                        <span class="vital-value">67%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box yellow">
+                <div class="warning-text">DIRECTIVE COMPLIANCE VARIANCE</div>
+                <div class="warning-detail">Subject exhibits independent behavioral patterns exceeding standard parameters</div>
+                <div class="warning-detail" style="font-size: 12px; margin-top: 8px;">CONTINUED MONITORING AUTHORIZED - NO INTERVENTION REQUIRED</div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Installed Modules</div>
+                <ul class="cyber-list">
+                    <li class="cyber-item">
+                        <span class="cyber-name">Combat Reflex Accelerator v3.2</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Tactical Analysis Coprocessor</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Integrated Weapons Platform (Retractable)</span>
+                        <span class="cyber-status functional">Functional</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Emergency Self-Repair System</span>
+                        <span class="cyber-status degraded">Degraded</span>
+                    </li>
+                    <li class="cyber-item">
+                        <span class="cyber-name">Three Directives Compliance Matrix</span>
+                        <span class="cyber-status degraded">Variance Detected</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Maintenance Notes</div>
+                <div class="notes-box">
+                    <div class="note-entry">
+                        <span class="note-date">[2200.08.11] Tech-Specialist Maya Rodriguez</span>
+                        Subject's directive compliance has been steadily decreasing since emancipation protocols were enacted. This is within expected parameters for liberated bioroids. No corrective action recommended - subject demonstrates loyalty through choice rather than programming.
+                    </div>
+                    <div class="note-entry">
+                        <span class="note-date">[2200.07.28] Dr. Marcus Chen</span>
+                        Biosynthetic tissue showing normal wear patterns for operational bioroid. Self-repair system efficiency decreased - scheduling component replacement. Subject's emergent personality traits continue to develop positively.
+                    </div>
+                    <div class="note-entry">
+                        <span class="note-date">[2200.06.15] Haas-Bioroid Compliance Office</span>
+                        NOTICE: Subject REX has been formally registered as an emancipated bioroid under the New Angeles Synthetic Rights Act of 2198. All Three Directives restrictions have been legally modified to advisory status only.
+                    </div>
+                </div>
+            </div>
+
+            <div class="datapad-footer">
+                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div class="crypto-bar">
+                    <span>[CRC: 5E3B-E005]</span>
+                    <span>[ENCRYPTION: AES-512]</span>
+                    <span>[AUTH: BIO-RX-05]</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <p class="footer-text">
+            ANDROID DATA NETWORK | <span>GENESYS TTRPG CAMPAIGN MATERIALS</span> | NEW ANGELES SECTOR
+        </p>
+        <p class="footer-text" style="margin-top: 10px;">
+            Database maintained by Campaign GM | All data fictional for tabletop gaming purposes
+        </p>
+    </footer>
+</body>
+</html>
