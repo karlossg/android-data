@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEDICAL DATABASE | ANDROID DATA NETWORK</title>
+    <title>BAZA MEDYCZNA | ANDROID DATA NETWORK</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400&family=Share+Tech+Mono&display=swap');
 
@@ -176,6 +176,13 @@
             overflow: hidden;
         }
 
+        .datapad.infected {
+            border-color: var(--accent-red);
+            box-shadow:
+                0 0 50px rgba(255, 68, 68, 0.3),
+                inset 0 0 60px rgba(0, 0, 0, 0.9);
+        }
+
         .datapad::before {
             content: '';
             position: absolute;
@@ -201,6 +208,10 @@
             background: linear-gradient(90deg, transparent, var(--primary-cyan), var(--accent-magenta), var(--primary-cyan), transparent);
             animation: scanbeam 6s linear infinite;
             z-index: 2;
+        }
+
+        .datapad.infected .scan-beam {
+            background: linear-gradient(90deg, transparent, var(--accent-red), var(--accent-orange), var(--accent-red), transparent);
         }
 
         @keyframes scanlines {
@@ -269,6 +280,13 @@
             animation: glow 3s ease-in-out infinite alternate;
         }
 
+        .datapad.infected .header {
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-orange), var(--accent-red));
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
         @keyframes glow {
             from { filter: drop-shadow(0 0 10px var(--primary-cyan)); }
             to { filter: drop-shadow(0 0 20px var(--accent-magenta)); }
@@ -306,6 +324,11 @@
             letter-spacing: 2px;
             border-bottom: 2px solid rgba(0, 255, 204, 0.4);
             padding-bottom: 8px;
+        }
+
+        .datapad.infected .section-title {
+            color: var(--accent-orange);
+            border-bottom-color: rgba(255, 153, 51, 0.4);
         }
 
         .data-grid {
@@ -439,7 +462,7 @@
             font-size: 11px;
             color: var(--accent-magenta);
             text-transform: uppercase;
-            width: 120px;
+            width: 150px;
             flex-shrink: 0;
         }
 
@@ -667,603 +690,598 @@
         <a href="index.html" class="site-logo">ANDROID<span>DATA</span></a>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="medical-records.html" class="active">Medical Records</a></li>
+                <li><a href="index.html">Strona Glowna</a></li>
+                <li><a href="medical-records.html" class="active">Kartoteka Medyczna</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Page Header -->
     <div class="page-header">
-        <h1 class="page-title">Medical Database</h1>
-        <p class="page-subtitle">// Classified Personnel Health Records //</p>
+        <h1 class="page-title">Baza Medyczna</h1>
+        <p class="page-subtitle">// Tajne Dane Medyczne Personelu //</p>
     </div>
 
     <!-- Database Status -->
     <div class="database-status">
         <div class="status-item">
             <span class="status-dot"></span>
-            <span>DATABASE: ONLINE</span>
+            <span>BAZA DANYCH: ONLINE</span>
         </div>
         <div class="status-item">
-            <span>RECORDS LOADED: 5</span>
+            <span>ZALADOWANE REKORDY: 5</span>
         </div>
         <div class="status-item">
-            <span>LAST SYNC: 2200.08.14 // 04:17 CET</span>
+            <span>OSTATNIA SYNC: 2211.09.15 // 14:32 CET</span>
         </div>
         <div class="status-item">
-            <span>CLEARANCE: OMEGA-3</span>
+            <span>POZIOM DOSTEPU: OMEGA-7</span>
         </div>
     </div>
 
     <!-- Records Container -->
     <div class="records-container">
 
-        <!-- RECORD 1: TAURON McCLICCE -->
-        <div class="datapad">
+        <!-- RECORD 1: TOMMY NORRIS -->
+        <div class="datapad infected">
             <div class="scan-beam"></div>
-            <div class="status-bar">STATUS: ACTIVE DUTY</div>
+            <div class="status-bar critical">STATUS: NOSICIEL PSYCHOCZASTKI</div>
 
-            <h2 class="header">[MED/7C-19-ALPHA-001] TAURON McCLICCE</h2>
+            <h2 class="header">[MED/7C-19-ALPHA-001] TOMMY NORRIS</h2>
 
             <div class="classification">
-                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 2<br>
-                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
-                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
-                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+                <strong>KLASYFIKACJA:</strong> TAJNE - POZIOM 4 (WYMAGANY DOSTEP OMEGA)<br>
+                <strong>TYP DOKUMENTU:</strong> PROFIL KLINICZNY - NOSICIEL PSYCHOWIRUSA<br>
+                <strong>DATA PROTOKOLU:</strong> 15.09.2211 14:32 CET<br>
+                <strong>PLACOWKA:</strong> TAJNE CENTRUM MEDYCZNE HEINE-KORKOT, BASE DE CAYAMBE
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-text">ZARAZENIE PSYCHOCZASTKA</div>
+                <div class="warning-detail">Ekspozycja podczas incydentu na promie Gwiazda Polarna // 08.06.2211</div>
+                <div class="warning-detail" style="font-size: 16px; margin-top: 8px;">PROGNOZA: 7-9 MIESIECY</div>
             </div>
 
             <div class="section">
-                <div class="section-title">1. Subject Identification</div>
+                <div class="section-title">1. Identyfikacja Pacjenta</div>
                 <div class="data-grid">
-                    <div class="data-label">Full Name:</div>
-                    <div class="data-value">Tauron McClicce</div>
-                    <div class="data-label">Subject ID:</div>
+                    <div class="data-label">Imie i Nazwisko:</div>
+                    <div class="data-value">Tommy Norris</div>
+                    <div class="data-label">ID Pacjenta:</div>
                     <div class="data-value">7C-19-A-001</div>
-                    <div class="data-label">Species:</div>
-                    <div class="data-value">Human (Baseline)</div>
-                    <div class="data-label">Blood Type:</div>
-                    <div class="data-value">O-Negative (Universal)</div>
-                    <div class="data-label">Age:</div>
-                    <div class="data-value">34 Standard Years</div>
+                    <div class="data-label">Gatunek:</div>
+                    <div class="data-value critical">Czlowiek (Skazony - Nosiciel Psychoczastki)</div>
+                    <div class="data-label">Grupa Krwi:</div>
+                    <div class="data-value warning">0-Negatywna (SKONTAMINOWANA)</div>
+                    <div class="data-label">Wiek:</div>
+                    <div class="data-value">44 lata</div>
+                    <div class="data-label">Archetyp:</div>
+                    <div class="data-value">Natural (Baseline)</div>
+                    <div class="data-label">Profesja:</div>
+                    <div class="data-value">Najemnik / Technik</div>
                     <div class="data-label">Status:</div>
-                    <div class="data-value success">CLEARED FOR OPERATIONS</div>
+                    <div class="data-value critical">OBSERWACJA MEDYCZNA / KWARANTANNA</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">2. Biometric Assessment</div>
-                <div class="vitals-container">
-                    <div class="vital-row">
-                        <span class="vital-label">Neural Activity</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 92%;"></div></div>
-                        <span class="vital-value">92%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Cardiac Function</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 88%;"></div></div>
-                        <span class="vital-value">88%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Respiratory</span>
-                        <div class="vital-bar"><div class="vital-fill good" style="width: 85%;"></div></div>
-                        <span class="vital-value">85%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Immune Response</span>
-                        <div class="vital-bar"><div class="vital-fill good" style="width: 79%;"></div></div>
-                        <span class="vital-value">79%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Cellular Regen</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 94%;"></div></div>
-                        <span class="vital-value">94%</span>
+                <div class="section-title">2. Okolicznosci Zarazenia</div>
+                <div class="data-grid">
+                    <div class="data-label">Przyczyna:</div>
+                    <div class="data-value">Przypadkowa ekspozycja operacyjna</div>
+                    <div class="data-label">Incydent:</div>
+                    <div class="data-value warning">Prom Gwiazda Polarna - Rozbicie probowki z wirusem</div>
+                    <div class="data-label">Data Ekspozycji:</div>
+                    <div class="data-value">08.06.2211</div>
+                    <div class="data-label">Stezenie:</div>
+                    <div class="data-value warning">Niskie - Ekspozycja Aerozolowa</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Charakterystyka Psychoczastki</div>
+                <div class="data-grid">
+                    <div class="data-label">Profil:</div>
+                    <div class="data-value">Zaprogramowany Genoidiotyczny</div>
+                    <div class="data-label">Efekty:</div>
+                    <div class="data-value critical">Integracja z Genomem Nosiciela</div>
+                    <div class="data-label">Dotknięte Obszary:</div>
+                    <div class="data-value">Tkanki Silnie Unaczynione + Uklad Nerwowy</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Prognoza Zyciowa</div>
+                <div class="data-grid">
+                    <div class="data-label">Czas Przezycia:</div>
+                    <div class="data-value critical" style="font-size: 16px; font-weight: 900;">7-9 MIESIECY</div>
+                    <div class="data-label">Warunki:</div>
+                    <div class="data-value">Poza Kapsula Kriogeniczna</div>
+                    <div class="data-label">Aktualny Stan:</div>
+                    <div class="data-value warning">POD OBSERWACJA - AKTYWNY</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">5. Znaki Szczegolne</div>
+                <div class="notes-box" style="border-color: var(--accent-orange);">
+                    <div class="note-entry">
+                        Lysy z tatuazami na glowie o tematyce anarchistycznej i anty-korporacyjnej. Broda, wasy. Wiecznie pali cygara. Nosi czarno-zielony kilt i wojskowe buty.
                     </div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">3. Cybernetic Augmentations</div>
-                <ul class="cyber-list">
-                    <li class="cyber-item">
-                        <span class="cyber-name">Kiroshi Optics Mk.III (Both Eyes)</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Dermal Armor Weave (Torso)</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Reflex Boosters (Spinal)</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <div class="section-title">4. Medical Notes</div>
-                <div class="notes-box">
+                <div class="section-title">6. Notatki Medyczne</div>
+                <div class="notes-box" style="border-color: var(--accent-red);">
                     <div class="note-entry">
-                        <span class="note-date">[2200.08.10] Dr. Helena Voss</span>
-                        Subject shows exceptional recovery from recent field injuries. Cellular regeneration rate above baseline - possibly linked to genetic optimization from childhood treatments. Recommend continued monitoring of enhanced healing factor.
+                        <span class="note-date">[2211.09.12] Dr. Helena Voss</span>
+                        Pacjent wykazuje powolna progresje zarazenia. Markery psychoczastki obecne we krwi. Zalecana kontynuacja obserwacji i regularne badania neuro-genetyczne.
                     </div>
                     <div class="note-entry">
-                        <span class="note-date">[2200.07.22] Dr. Marcus Chen</span>
-                        Cybernetic integration stable. No signs of rejection or cyberpsychosis markers. Subject maintains healthy psychological profile despite high augmentation load.
+                        <span class="note-date">[2211.08.15] Dr. Marcus Chen</span>
+                        Pacjent przeniesiony z kriostazy do aktywnej obserwacji. Dotychczasowy zawod (najemnik/technik) wskazuje na dobra kondycje fizyczna co moze wplynac na tempo progresji choroby.
                     </div>
                 </div>
             </div>
 
             <div class="datapad-footer">
-                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div>PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: MED-AI/HK-SECRET | KOPIOWANIE I DYSTRYBUCJA ZABRONIONE</div>
                 <div class="crypto-bar">
                     <span>[CRC: 8B2F-A001]</span>
-                    <span>[ENCRYPTION: AES-512]</span>
-                    <span>[AUTH: BIO-TM-19]</span>
+                    <span>[SZYFROWANIE: AES-512]</span>
+                    <span>[AUTH: BIO-TN-44]</span>
                 </div>
             </div>
         </div>
 
         <!-- RECORD 2: BERNAL DIAZ DE CASTILLO -->
-        <div class="datapad">
+        <div class="datapad infected">
             <div class="scan-beam"></div>
-            <div class="status-bar warning">STATUS: MEDICAL OBSERVATION</div>
+            <div class="status-bar critical">STATUS: NOSICIEL PSYCHOCZASTKI</div>
 
             <h2 class="header">[MED/7C-19-BETA-002] BERNAL DIAZ DE CASTILLO</h2>
 
             <div class="classification">
-                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 2<br>
-                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
-                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
-                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+                <strong>KLASYFIKACJA:</strong> TAJNE - POZIOM 4 (WYMAGANY DOSTEP OMEGA)<br>
+                <strong>TYP DOKUMENTU:</strong> PROFIL KLINICZNY - NOSICIEL PSYCHOWIRUSA<br>
+                <strong>DATA PROTOKOLU:</strong> 15.09.2211 14:32 CET<br>
+                <strong>PLACOWKA:</strong> TAJNE CENTRUM MEDYCZNE HEINE-KORKOT, BASE DE CAYAMBE
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-text">ZARAZENIE PSYCHOCZASTKA</div>
+                <div class="warning-detail">Ekspozycja podczas incydentu na promie Gwiazda Polarna // 08.06.2211</div>
+                <div class="warning-detail" style="font-size: 16px; margin-top: 8px;">PROGNOZA: 7-9 MIESIECY</div>
             </div>
 
             <div class="section">
-                <div class="section-title">1. Subject Identification</div>
+                <div class="section-title">1. Identyfikacja Pacjenta</div>
                 <div class="data-grid">
-                    <div class="data-label">Full Name:</div>
-                    <div class="data-value">Bernal Diaz de Castillo</div>
-                    <div class="data-label">Subject ID:</div>
+                    <div class="data-label">Imie i Nazwisko:</div>
+                    <div class="data-value">Bernal Diaz de Castillo "Bernie"</div>
+                    <div class="data-label">ID Pacjenta:</div>
                     <div class="data-value">7C-19-B-002</div>
-                    <div class="data-label">Species:</div>
-                    <div class="data-value">Human (Baseline)</div>
-                    <div class="data-label">Blood Type:</div>
-                    <div class="data-value">A-Positive</div>
-                    <div class="data-label">Age:</div>
-                    <div class="data-value">41 Standard Years</div>
+                    <div class="data-label">Gatunek:</div>
+                    <div class="data-value critical">Czlowiek (Skazony - Nosiciel Psychoczastki)</div>
+                    <div class="data-label">Grupa Krwi:</div>
+                    <div class="data-value warning">A-Pozytywna (SKONTAMINOWANA)</div>
+                    <div class="data-label">Wiek:</div>
+                    <div class="data-value">33 lata</div>
+                    <div class="data-label">Archetyp:</div>
+                    <div class="data-value highlight">Cybork</div>
+                    <div class="data-label">Profesja:</div>
+                    <div class="data-value">Sledczy</div>
                     <div class="data-label">Status:</div>
-                    <div class="data-value warning">RESTRICTED DUTY - MEDICAL</div>
+                    <div class="data-value critical">OBSERWACJA MEDYCZNA / KWARANTANNA</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">2. Biometric Assessment</div>
-                <div class="vitals-container">
-                    <div class="vital-row">
-                        <span class="vital-label">Neural Activity</span>
-                        <div class="vital-bar"><div class="vital-fill good" style="width: 78%;"></div></div>
-                        <span class="vital-value">78%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Cardiac Function</span>
-                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 65%;"></div></div>
-                        <span class="vital-value">65%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Respiratory</span>
-                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 62%;"></div></div>
-                        <span class="vital-value">62%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Immune Response</span>
-                        <div class="vital-bar"><div class="vital-fill poor" style="width: 48%;"></div></div>
-                        <span class="vital-value">48%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Cellular Regen</span>
-                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 55%;"></div></div>
-                        <span class="vital-value">55%</span>
-                    </div>
+                <div class="section-title">2. Okolicznosci Zarazenia</div>
+                <div class="data-grid">
+                    <div class="data-label">Przyczyna:</div>
+                    <div class="data-value">Przypadkowa ekspozycja operacyjna</div>
+                    <div class="data-label">Incydent:</div>
+                    <div class="data-value warning">Prom Gwiazda Polarna - Rozbicie probowki z wirusem</div>
+                    <div class="data-label">Data Ekspozycji:</div>
+                    <div class="data-value">08.06.2211</div>
+                    <div class="data-label">Stezenie:</div>
+                    <div class="data-value warning">Niskie - Ekspozycja Aerozolowa</div>
                 </div>
             </div>
 
-            <div class="warning-box orange">
-                <div class="warning-text">CHRONIC COMBAT FATIGUE SYNDROME</div>
-                <div class="warning-detail">Extended combat operations have resulted in cumulative tissue damage</div>
-                <div class="warning-detail" style="font-size: 14px; margin-top: 8px;">REGENERATIVE THERAPY RECOMMENDED</div>
+            <div class="section">
+                <div class="section-title">3. Prognoza Zyciowa</div>
+                <div class="data-grid">
+                    <div class="data-label">Czas Przezycia:</div>
+                    <div class="data-value critical" style="font-size: 16px; font-weight: 900;">7-9 MIESIECY</div>
+                    <div class="data-label">Warunki:</div>
+                    <div class="data-value">Poza Kapsula Kriogeniczna</div>
+                    <div class="data-label">Aktualny Stan:</div>
+                    <div class="data-value warning">POD OBSERWACJA - AKTYWNY</div>
+                </div>
             </div>
 
             <div class="section">
-                <div class="section-title">3. Cybernetic Augmentations</div>
+                <div class="section-title">4. Augmentacje Cybernetyczne</div>
                 <ul class="cyber-list">
                     <li class="cyber-item">
-                        <span class="cyber-name">Militech Gorilla Arms (Both)</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Subdermal Armor Plating (Full Body)</span>
-                        <span class="cyber-status degraded">Degraded</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Adrenaline Booster Implant</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Pain Editor (Neural)</span>
-                        <span class="cyber-status degraded">Degraded</span>
+                        <span class="cyber-name">Oplot Kostny (Cale Cialo)</span>
+                        <span class="cyber-status functional">Funkcjonalny</span>
                     </li>
                 </ul>
+                <div style="margin-top: 15px; padding: 15px; background: rgba(255, 153, 51, 0.15); border-left: 4px solid #ff9933; font-size: 12px; line-height: 1.7; font-family: 'Roboto Mono', monospace;">
+                    UWAGA: Interakcja miedzy oplotem kostnym a psychoczastka wymaga dodatkowych badan. Mozliwy wplyw na tempo progresji choroby.
+                </div>
             </div>
 
             <div class="section">
-                <div class="section-title">4. Medical Notes</div>
-                <div class="notes-box">
+                <div class="section-title">5. Historia Pacjenta</div>
+                <div class="notes-box" style="border-color: var(--accent-orange);">
                     <div class="note-entry">
-                        <span class="note-date">[2200.08.12] Dr. Helena Voss</span>
-                        Subject's pain editor showing signs of neural pathway degradation. Extended use has created dependency issues. Recommending gradual reduction protocol combined with traditional pain management.
+                        Nielegalny imigrant z Meksyku. W czasie Wojny Swiatow zaciagnal sie do armii w celu uzyskania prawa pobytu. Weteran walk na Ksiezycu. Po powrocie do cywila pracowal dla syndykatow przestepczych. Obecnie sledczy w Base de Cayambe.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">6. Notatki Medyczne</div>
+                <div class="notes-box" style="border-color: var(--accent-red);">
+                    <div class="note-entry">
+                        <span class="note-date">[2211.09.10] Dr. Helena Voss</span>
+                        Pacjent wykazuje oznaki stresu pourazowego z czasow wojny. Psychoczastka moze nasilac objawy. Zalecana terapia wspomagajaca i monitoring psychologiczny.
                     </div>
                     <div class="note-entry">
-                        <span class="note-date">[2200.08.01] Dr. Yuki Tanaka</span>
-                        Subdermal armor plating requires maintenance. Several panels showing micro-fractures from repeated impacts. Scheduling replacement surgery for next available slot. Subject cleared for light duty only until repairs complete.
+                        <span class="note-date">[2211.08.15] Dr. Yuki Tanaka</span>
+                        Oplot kostny w dobrym stanie. Brak widocznej interferencji z procesem infekcji. Kontynuacja standardowego protokolu obserwacji.
                     </div>
                 </div>
             </div>
 
             <div class="datapad-footer">
-                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div>PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: MED-AI/HK-SECRET | KOPIOWANIE I DYSTRYBUCJA ZABRONIONE</div>
                 <div class="crypto-bar">
                     <span>[CRC: 9D4E-B002]</span>
-                    <span>[ENCRYPTION: AES-512]</span>
-                    <span>[AUTH: BIO-BD-41]</span>
+                    <span>[SZYFROWANIE: AES-512]</span>
+                    <span>[AUTH: BIO-BD-33]</span>
                 </div>
             </div>
         </div>
 
-        <!-- RECORD 3: FILAS KOWALSKY -->
-        <div class="datapad">
+        <!-- RECORD 3: FILAS TSUNG -->
+        <div class="datapad infected">
             <div class="scan-beam"></div>
-            <div class="status-bar">STATUS: ACTIVE DUTY</div>
+            <div class="status-bar critical">STATUS: NOSICIEL PSYCHOCZASTKI</div>
 
-            <h2 class="header">[MED/7C-19-GAMMA-003] FILAS KOWALSKY</h2>
+            <h2 class="header">[MED/7C-19-GAMMA-003] FILAS "SZWEJK" TSUNG</h2>
 
             <div class="classification">
-                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 3<br>
-                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
-                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
-                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+                <strong>KLASYFIKACJA:</strong> TAJNE - POZIOM 4 (WYMAGANY DOSTEP OMEGA)<br>
+                <strong>TYP DOKUMENTU:</strong> PROFIL KLINICZNY - NOSICIEL PSYCHOWIRUSA<br>
+                <strong>DATA PROTOKOLU:</strong> 15.09.2211 14:32 CET<br>
+                <strong>PLACOWKA:</strong> TAJNE CENTRUM MEDYCZNE HEINE-KORKOT, BASE DE CAYAMBE
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-text">ZARAZENIE PSYCHOCZASTKA</div>
+                <div class="warning-detail">Ekspozycja podczas incydentu na promie Gwiazda Polarna // 08.06.2211</div>
+                <div class="warning-detail" style="font-size: 16px; margin-top: 8px;">PROGNOZA: 7-9 MIESIECY</div>
             </div>
 
             <div class="section">
-                <div class="section-title">1. Subject Identification</div>
+                <div class="section-title">1. Identyfikacja Pacjenta</div>
                 <div class="data-grid">
-                    <div class="data-label">Full Name:</div>
-                    <div class="data-value">Filas Kowalsky</div>
-                    <div class="data-label">Subject ID:</div>
+                    <div class="data-label">Imie i Nazwisko:</div>
+                    <div class="data-value">Filas "Szwejk" Tsung</div>
+                    <div class="data-label">ID Pacjenta:</div>
                     <div class="data-value">7C-19-G-003</div>
-                    <div class="data-label">Species:</div>
-                    <div class="data-value">Human (Gene-Modified)</div>
-                    <div class="data-label">Blood Type:</div>
-                    <div class="data-value">B-Negative (Synthetic Plasma Compatible)</div>
-                    <div class="data-label">Age:</div>
-                    <div class="data-value">28 Standard Years</div>
+                    <div class="data-label">Gatunek:</div>
+                    <div class="data-value critical">Czlowiek (Skazony - Nosiciel Psychoczastki)</div>
+                    <div class="data-label">Grupa Krwi:</div>
+                    <div class="data-value warning">B-Negatywna (SKONTAMINOWANA)</div>
+                    <div class="data-label">Wiek:</div>
+                    <div class="data-value">31 lat</div>
+                    <div class="data-label">Archetyp:</div>
+                    <div class="data-value">Natural</div>
+                    <div class="data-label">Profesja:</div>
+                    <div class="data-value highlight">Runner (Haker)</div>
                     <div class="data-label">Status:</div>
-                    <div class="data-value success">CLEARED FOR OPERATIONS</div>
+                    <div class="data-value critical">OBSERWACJA MEDYCZNA / KWARANTANNA</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">2. Biometric Assessment</div>
-                <div class="vitals-container">
-                    <div class="vital-row">
-                        <span class="vital-label">Neural Activity</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 96%;"></div></div>
-                        <span class="vital-value">96%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Cardiac Function</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 91%;"></div></div>
-                        <span class="vital-value">91%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Respiratory</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 89%;"></div></div>
-                        <span class="vital-value">89%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Immune Response</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 95%;"></div></div>
-                        <span class="vital-value">95%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Cellular Regen</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 97%;"></div></div>
-                        <span class="vital-value">97%</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-title">3. Genetic Modifications</div>
+                <div class="section-title">2. Okolicznosci Zarazenia</div>
                 <div class="data-grid">
-                    <div class="data-label">Mod Class:</div>
-                    <div class="data-value highlight">Generation 2 Enhancement Package</div>
-                    <div class="data-label">Enhancements:</div>
-                    <div class="data-value">Enhanced Immune System, Accelerated Healing, Toxin Resistance</div>
-                    <div class="data-label">Stability:</div>
-                    <div class="data-value success">STABLE - No Degradation Detected</div>
+                    <div class="data-label">Przyczyna:</div>
+                    <div class="data-value">Przypadkowa ekspozycja operacyjna</div>
+                    <div class="data-label">Incydent:</div>
+                    <div class="data-value warning">Prom Gwiazda Polarna - Rozbicie probowki z wirusem</div>
+                    <div class="data-label">Data Ekspozycji:</div>
+                    <div class="data-value">08.06.2211</div>
+                    <div class="data-label">Stezenie:</div>
+                    <div class="data-value warning">Niskie - Ekspozycja Aerozolowa</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">4. Cybernetic Augmentations</div>
+                <div class="section-title">3. Prognoza Zyciowa</div>
+                <div class="data-grid">
+                    <div class="data-label">Czas Przezycia:</div>
+                    <div class="data-value critical" style="font-size: 16px; font-weight: 900;">7-9 MIESIECY</div>
+                    <div class="data-label">Warunki:</div>
+                    <div class="data-value">Poza Kapsula Kriogeniczna</div>
+                    <div class="data-label">Aktualny Stan:</div>
+                    <div class="data-value warning">POD OBSERWACJA - AKTYWNY</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Historia Pacjenta</div>
+                <div class="notes-box" style="border-color: var(--accent-orange);">
+                    <div class="note-entry">
+                        Pochodzenie mieszane - matka Ekwadorka, ojciec Japonczyk (manager Jinteki). Byly programista SYNC (spolka zalezna NBN). Odkryl tajne pliki dot. manipulacji mediami przez NBN. Zmienil tozsamosc przy pomocy chinskiej triady 14k. Obecnie dziala jako runner w darknecie.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">5. Wyposazenie Sieciowe</div>
                 <ul class="cyber-list">
                     <li class="cyber-item">
-                        <span class="cyber-name">NetWatch ICE Breaker Suite (Cranial)</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Monowire (Right Forearm)</span>
-                        <span class="cyber-status functional">Functional</span>
+                        <span class="cyber-name">PAD z programami LOD (Garota, Miecz Gordyjski)</span>
+                        <span class="cyber-status functional">Funkcjonalny</span>
                     </li>
                 </ul>
             </div>
 
             <div class="section">
-                <div class="section-title">5. Medical Notes</div>
-                <div class="notes-box">
+                <div class="section-title">6. Notatki Medyczne</div>
+                <div class="notes-box" style="border-color: var(--accent-red);">
                     <div class="note-entry">
-                        <span class="note-date">[2200.08.08] Dr. Marcus Chen</span>
-                        Genetic modifications remain stable. Subject's enhanced immune response continues to exceed baseline parameters. Recommend bi-annual monitoring for any signs of genetic drift.
+                        <span class="note-date">[2211.09.08] Dr. Marcus Chen</span>
+                        Pacjent o wysokiej aktywnosci neuronalnej - runner. Psychoczastka wykazuje preferencje do tkanek nerwowych. Zalecany wzmozony monitoring funkcji kognitywnych.
                     </div>
                     <div class="note-entry">
-                        <span class="note-date">[2200.07.15] Dr. Helena Voss</span>
-                        NetRunner implants showing optimal performance. No signs of black ICE exposure damage. Subject maintains excellent neural health despite frequent net diving activities.
+                        <span class="note-date">[2211.08.20] Dr. Helena Voss</span>
+                        Pacjent niechętny do wspolpracy - wykazuje silna nieufnosc wobec korporacji. Pochodzenie (byly pracownik NBN) moze wplywac na postawe.
                     </div>
                 </div>
             </div>
 
             <div class="datapad-footer">
-                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div>PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: MED-AI/HK-SECRET | KOPIOWANIE I DYSTRYBUCJA ZABRONIONE</div>
                 <div class="crypto-bar">
                     <span>[CRC: 2A7C-G003]</span>
-                    <span>[ENCRYPTION: AES-512]</span>
-                    <span>[AUTH: BIO-FK-28]</span>
+                    <span>[SZYFROWANIE: AES-512]</span>
+                    <span>[AUTH: BIO-FT-31]</span>
                 </div>
             </div>
         </div>
 
         <!-- RECORD 4: VINCE SMITH -->
-        <div class="datapad">
+        <div class="datapad infected">
             <div class="scan-beam"></div>
-            <div class="status-bar critical">STATUS: CRITICAL MONITORING</div>
+            <div class="status-bar critical">STATUS: NOSICIEL PSYCHOCZASTKI</div>
 
-            <h2 class="header">[MED/7C-19-DELTA-004] VINCE SMITH</h2>
+            <h2 class="header">[MED/7C-19-DELTA-004] VINCE "DIAMOND" SMITH</h2>
 
             <div class="classification">
-                <strong>CLASSIFICATION:</strong> SECRET - LEVEL 4 (OMEGA CLEARANCE REQUIRED)<br>
-                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - PSYCHOPARTICLE CARRIER<br>
-                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
-                <strong>FACILITY:</strong> SECTOR IZ-7, CRYOGENIC CAPSULE MODULE
-            </div>
-
-            <div class="section">
-                <div class="section-title">1. Subject Identification</div>
-                <div class="data-grid">
-                    <div class="data-label">Full Name:</div>
-                    <div class="data-value">Vince Smith</div>
-                    <div class="data-label">Subject ID:</div>
-                    <div class="data-value">7C-19-D-004</div>
-                    <div class="data-label">Species:</div>
-                    <div class="data-value critical">Human (Compromised - Psychoparticle Carrier)</div>
-                    <div class="data-label">Blood Type:</div>
-                    <div class="data-value warning">AB-Positive (CONTAMINATED)</div>
-                    <div class="data-label">Age:</div>
-                    <div class="data-value">31 Standard Years</div>
-                    <div class="data-label">Status:</div>
-                    <div class="data-value critical">PERMANENT ISOLATION / CRYO-STASIS</div>
-                </div>
+                <strong>KLASYFIKACJA:</strong> TAJNE - POZIOM 4 (WYMAGANY DOSTEP OMEGA)<br>
+                <strong>TYP DOKUMENTU:</strong> PROFIL KLINICZNY - NOSICIEL PSYCHOWIRUSA<br>
+                <strong>DATA PROTOKOLU:</strong> 15.09.2211 14:32 CET<br>
+                <strong>PLACOWKA:</strong> TAJNE CENTRUM MEDYCZNE HEINE-KORKOT, BASE DE CAYAMBE
             </div>
 
             <div class="warning-box">
-                <div class="warning-text">PROGRESSIVE GENETIC DEGRADATION</div>
-                <div class="warning-detail">Psychoparticle Active - Low Initial Dose</div>
-                <div class="warning-detail" style="font-size: 16px; margin-top: 8px;">SLOW ORGANISM DETERIORATION IN PROGRESS</div>
+                <div class="warning-text">ZARAZENIE PSYCHOCZASTKA</div>
+                <div class="warning-detail">Ekspozycja podczas incydentu na promie Gwiazda Polarna // 08.06.2211</div>
+                <div class="warning-detail" style="font-size: 16px; margin-top: 8px;">PROGNOZA: 7-9 MIESIECY</div>
             </div>
 
             <div class="section">
-                <div class="section-title">2. Infection Circumstances</div>
+                <div class="section-title">1. Identyfikacja Pacjenta</div>
                 <div class="data-grid">
-                    <div class="data-label">Cause:</div>
-                    <div class="data-value">Accidental Operational Incident</div>
-                    <div class="data-label">Incident Class:</div>
-                    <div class="data-value warning">Protocol Level 2</div>
-                </div>
-                <div style="margin-top: 15px; padding: 15px; background: rgba(255, 0, 170, 0.15); border-left: 4px solid #ff00aa; font-size: 12px; line-height: 1.7; font-family: 'Roboto Mono', monospace;">
-                    Contact with unsecured research material during operational procedure.<br>
-                    Incident classified as Protocol Level 2. No evidence of intentional exposure.
+                    <div class="data-label">Imie i Nazwisko:</div>
+                    <div class="data-value">Vince "Diamond" Smith</div>
+                    <div class="data-label">ID Pacjenta:</div>
+                    <div class="data-value">7C-19-D-004</div>
+                    <div class="data-label">Gatunek:</div>
+                    <div class="data-value critical">Czlowiek Genmod (Skazony - Nosiciel Psychoczastki)</div>
+                    <div class="data-label">Grupa Krwi:</div>
+                    <div class="data-value warning">AB-Pozytywna (SKONTAMINOWANA)</div>
+                    <div class="data-label">Wiek:</div>
+                    <div class="data-value">20 lat</div>
+                    <div class="data-label">Archetyp:</div>
+                    <div class="data-value highlight">Genmod</div>
+                    <div class="data-label">Profesja:</div>
+                    <div class="data-value">Influencer</div>
+                    <div class="data-label">Status:</div>
+                    <div class="data-value critical">OBSERWACJA MEDYCZNA / KWARANTANNA</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">3. Psychoparticle Characteristics</div>
+                <div class="section-title">2. Okolicznosci Zarazenia</div>
                 <div class="data-grid">
-                    <div class="data-label">Profile:</div>
-                    <div class="data-value">Programmed Genoidiotic</div>
-                    <div class="data-label">Effects:</div>
-                    <div class="data-value critical">Integration with Host Genome</div>
-                    <div class="data-label">Affected Areas:</div>
-                    <div class="data-value">Highly Vascularized Tissues + Nervous System</div>
+                    <div class="data-label">Przyczyna:</div>
+                    <div class="data-value">Przypadkowa ekspozycja operacyjna</div>
+                    <div class="data-label">Incydent:</div>
+                    <div class="data-value warning">Prom Gwiazda Polarna - Rozbicie probowki z wirusem</div>
+                    <div class="data-label">Data Ekspozycji:</div>
+                    <div class="data-value">08.06.2211</div>
+                    <div class="data-label">Stezenie:</div>
+                    <div class="data-value warning">Niskie - Ekspozycja Aerozolowa</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">4. Life Prognosis</div>
+                <div class="section-title">3. Prognoza Zyciowa</div>
                 <div class="data-grid">
-                    <div class="data-label">Survival Time:</div>
-                    <div class="data-value critical" style="font-size: 16px; font-weight: 900;">9-12 MONTHS</div>
-                    <div class="data-label">Conditions:</div>
-                    <div class="data-value">Outside Cryogenic Capsule</div>
-                    <div class="data-label">Current State:</div>
-                    <div class="data-value highlight">CRYO-STABILIZED (Profile CRYO-2)</div>
-                </div>
-                <div style="margin-top: 15px; font-size: 12px; color: #ff8888; font-family: 'Roboto Mono', monospace;">
-                    Accelerated tissue degeneration upon awakening. Terminal phase: rapid collapse of vital parameters.
+                    <div class="data-label">Czas Przezycia:</div>
+                    <div class="data-value critical" style="font-size: 16px; font-weight: 900;">7-9 MIESIECY</div>
+                    <div class="data-label">Warunki:</div>
+                    <div class="data-value">Poza Kapsula Kriogeniczna</div>
+                    <div class="data-label">Aktualny Stan:</div>
+                    <div class="data-value warning">POD OBSERWACJA - AKTYWNY</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">5. Operational Recommendations</div>
+                <div class="section-title">4. Modyfikacje Genetyczne</div>
+                <div class="data-grid">
+                    <div class="data-label">Klasa Modyfikacji:</div>
+                    <div class="data-value highlight">Genmod - Ulepszone Miesnie</div>
+                    <div class="data-label">Ulepszenia:</div>
+                    <div class="data-value">Zwiekszona Sila Fizyczna</div>
+                    <div class="data-label">Stabilnosc:</div>
+                    <div class="data-value warning">WYMAGA MONITORINGU - Mozliwa interakcja z psychoczastka</div>
+                </div>
+                <div style="margin-top: 15px; padding: 15px; background: rgba(255, 68, 68, 0.15); border-left: 4px solid #ff4444; font-size: 12px; line-height: 1.7; font-family: 'Roboto Mono', monospace;">
+                    UWAGA: Genmodyfikacje moga wplywac na tempo progresji psychoczastki. Wymagane dodatkowe badania interakcji miedzy zmodyfikowanym genomem a wirusem.
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">5. Historia Pacjenta</div>
+                <div class="notes-box" style="border-color: var(--accent-orange);">
+                    <div class="note-entry">
+                        Rodowity mieszkaniec New Angeles. Wychowany przez samotna matke (Silvia Smith) w Neo-Broadway, Base de Cayambe. Influencer prowadzacy kanal "Diamond Heart" o tematyce fitness i genmodow. Niebieski irokez. Mieszka z 3 wspolokatorami, ma kota "Szafira" i dziewczyne Angelike.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">6. Notatki Medyczne</div>
                 <div class="notes-box" style="border-color: var(--accent-red);">
-                    <ul style="list-style: none;">
-                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-cyan);">></span>
-                            Maintain in cryo-stabilization - minimize awakening cycles
-                        </li>
-                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-cyan);">></span>
-                            Upon awakening: full real-time neurogenetic monitoring required
-                        </li>
-                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--accent-red);">X</span>
-                            <strong style="color: var(--accent-red);">PROHIBITED:</strong> Extraction attempts outside security facility
-                        </li>
-                        <li style="margin: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-cyan);">></span>
-                            Experimental procedures only under controlled conditions
-                        </li>
-                    </ul>
+                    <div class="note-entry">
+                        <span class="note-date">[2211.09.14] Dr. Yuki Tanaka</span>
+                        Najmlodszy z pacjentow grupy. Genmodyfikacje moga wplywac na przebieg choroby - konieczne szczegolowe monitorowanie. Pacjent wykazuje trudnosci z akceptacja diagnozy.
+                    </div>
+                    <div class="note-entry">
+                        <span class="note-date">[2211.08.18] Dr. Helena Voss</span>
+                        Dobra kondycja fizyczna dzieki genmodom. Paradoksalnie ulepszone miesnie moga przyspieszyc rozprzestrzenianie sie wirusa przez zwiekszone ukrwienie tkanek.
+                    </div>
                 </div>
             </div>
 
             <div class="datapad-footer">
-                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/IZ-7 | COPYING AND DISTRIBUTION FORBIDDEN</div>
+                <div>PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: MED-AI/HK-SECRET | KOPIOWANIE I DYSTRYBUCJA ZABRONIONE</div>
                 <div class="crypto-bar">
                     <span>[CRC: 7A9F-D004]</span>
-                    <span>[ENCRYPTION: AES-512]</span>
-                    <span>[AUTH: BIO-QK-19]</span>
+                    <span>[SZYFROWANIE: AES-512]</span>
+                    <span>[AUTH: BIO-VS-20]</span>
                 </div>
             </div>
         </div>
 
         <!-- RECORD 5: REX -->
-        <div class="datapad">
+        <div class="datapad infected">
             <div class="scan-beam"></div>
-            <div class="status-bar">STATUS: ACTIVE DUTY</div>
+            <div class="status-bar critical">STATUS: NOSICIEL PSYCHOCZASTKI</div>
 
-            <h2 class="header">[MED/7C-19-EPSILON-005] REX</h2>
+            <h2 class="header">[MED/7C-19-EPSILON-005] REX "ORBITER"</h2>
 
             <div class="classification">
-                <strong>CLASSIFICATION:</strong> CONFIDENTIAL - LEVEL 2<br>
-                <strong>DOCUMENT TYPE:</strong> CLINICAL PROFILE - ACTIVE OPERATIVE<br>
-                <strong>PROTOCOL DATE:</strong> 14.08.2200 04:17 CET<br>
-                <strong>FACILITY:</strong> NEW ANGELES CENTRAL MEDICAL HUB
+                <strong>KLASYFIKACJA:</strong> TAJNE - POZIOM 4 (WYMAGANY DOSTEP OMEGA)<br>
+                <strong>TYP DOKUMENTU:</strong> PROFIL KLINICZNY - NOSICIEL PSYCHOWIRUSA<br>
+                <strong>DATA PROTOKOLU:</strong> 15.09.2211 14:32 CET<br>
+                <strong>PLACOWKA:</strong> TAJNE CENTRUM MEDYCZNE HEINE-KORKOT, BASE DE CAYAMBE
+            </div>
+
+            <div class="warning-box">
+                <div class="warning-text">ZARAZENIE PSYCHOCZASTKA</div>
+                <div class="warning-detail">Ekspozycja podczas incydentu na promie Gwiazda Polarna // 08.06.2211</div>
+                <div class="warning-detail" style="font-size: 16px; margin-top: 8px;">PROGNOZA: 7-9 MIESIECY</div>
             </div>
 
             <div class="section">
-                <div class="section-title">1. Subject Identification</div>
+                <div class="section-title">1. Identyfikacja Pacjenta</div>
                 <div class="data-grid">
-                    <div class="data-label">Designation:</div>
-                    <div class="data-value">Rex</div>
-                    <div class="data-label">Subject ID:</div>
+                    <div class="data-label">Oznaczenie:</div>
+                    <div class="data-value">Rex "Orbiter"</div>
+                    <div class="data-label">ID Pacjenta:</div>
                     <div class="data-value">7C-19-E-005</div>
-                    <div class="data-label">Species:</div>
-                    <div class="data-value highlight">Bioroid (Model: LB-7 "Liberation" Series)</div>
-                    <div class="data-label">Serial Number:</div>
-                    <div class="data-value">LB7-REX-4419-NLA</div>
-                    <div class="data-label">Activation Date:</div>
-                    <div class="data-value">2195.03.17</div>
+                    <div class="data-label">Gatunek:</div>
+                    <div class="data-value critical">Czlowiek (Skazony - Nosiciel Psychoczastki)</div>
+                    <div class="data-label">Grupa Krwi:</div>
+                    <div class="data-value warning">0-Pozytywna (SKONTAMINOWANA)</div>
+                    <div class="data-label">Wiek:</div>
+                    <div class="data-value">29 lat</div>
+                    <div class="data-label">Archetyp:</div>
+                    <div class="data-value">Natural</div>
+                    <div class="data-label">Profesja:</div>
+                    <div class="data-value highlight">Kurier (Przemytnik)</div>
                     <div class="data-label">Status:</div>
-                    <div class="data-value success">CLEARED FOR OPERATIONS</div>
+                    <div class="data-value critical">OBSERWACJA MEDYCZNA / KWARANTANNA</div>
                 </div>
             </div>
 
             <div class="section">
-                <div class="section-title">2. System Diagnostics</div>
-                <div class="vitals-container">
-                    <div class="vital-row">
-                        <span class="vital-label">Core Processor</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 98%;"></div></div>
-                        <span class="vital-value">98%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Neural Network</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 94%;"></div></div>
-                        <span class="vital-value">94%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Biosynthetic Tissue</span>
-                        <div class="vital-bar"><div class="vital-fill good" style="width: 82%;"></div></div>
-                        <span class="vital-value">82%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Power Core</span>
-                        <div class="vital-bar"><div class="vital-fill excellent" style="width: 91%;"></div></div>
-                        <span class="vital-value">91%</span>
-                    </div>
-                    <div class="vital-row">
-                        <span class="vital-label">Directive Compliance</span>
-                        <div class="vital-bar"><div class="vital-fill moderate" style="width: 67%;"></div></div>
-                        <span class="vital-value">67%</span>
+                <div class="section-title">2. Okolicznosci Zarazenia</div>
+                <div class="data-grid">
+                    <div class="data-label">Przyczyna:</div>
+                    <div class="data-value">Przypadkowa ekspozycja operacyjna</div>
+                    <div class="data-label">Incydent:</div>
+                    <div class="data-value warning">Prom Gwiazda Polarna - Rozbicie probowki z wirusem</div>
+                    <div class="data-label">Data Ekspozycji:</div>
+                    <div class="data-value">08.06.2211</div>
+                    <div class="data-label">Stezenie:</div>
+                    <div class="data-value warning">Niskie - Ekspozycja Aerozolowa</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">3. Prognoza Zyciowa</div>
+                <div class="data-grid">
+                    <div class="data-label">Czas Przezycia:</div>
+                    <div class="data-value critical" style="font-size: 16px; font-weight: 900;">7-9 MIESIECY</div>
+                    <div class="data-label">Warunki:</div>
+                    <div class="data-value">Poza Kapsula Kriogeniczna</div>
+                    <div class="data-label">Aktualny Stan:</div>
+                    <div class="data-value warning">POD OBSERWACJA - AKTYWNY</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">4. Historia Pacjenta</div>
+                <div class="notes-box" style="border-color: var(--accent-orange);">
+                    <div class="note-entry">
+                        Urodzony w SanSan. Matka prostytutka - oddala go do domu dziecka prowadzonego przez zakonnice Zakonu Sol. W wieku 15 lat uciekl do New Angeles. Przez 1.5 roku bezdomny na ulicach Starego Miasta w Base de Cayambe. Obecnie kurier specjalizujacy sie w przerzucie nielegalnych towarow miedzy Ziemia a Luna.
                     </div>
                 </div>
             </div>
 
-            <div class="warning-box yellow">
-                <div class="warning-text">DIRECTIVE COMPLIANCE VARIANCE</div>
-                <div class="warning-detail">Subject exhibits independent behavioral patterns exceeding standard parameters</div>
-                <div class="warning-detail" style="font-size: 12px; margin-top: 8px;">CONTINUED MONITORING AUTHORIZED - NO INTERVENTION REQUIRED</div>
+            <div class="section">
+                <div class="section-title">5. Profil Operacyjny</div>
+                <div class="notes-box" style="border-color: var(--primary-cyan);">
+                    <div class="note-entry">
+                        Specjalizacja: kontrabanda technologiczna, nieautoryzowane wszczepy, dane, komponenty przemyslowe, "zgubione" przesylki korporacyjne. Preferuje ciche metody - obejscia systemu, kontakty i lapowki zamiast konfrontacji.
+                    </div>
+                </div>
             </div>
 
             <div class="section">
-                <div class="section-title">3. Installed Modules</div>
-                <ul class="cyber-list">
-                    <li class="cyber-item">
-                        <span class="cyber-name">Combat Reflex Accelerator v3.2</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Tactical Analysis Coprocessor</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Integrated Weapons Platform (Retractable)</span>
-                        <span class="cyber-status functional">Functional</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Emergency Self-Repair System</span>
-                        <span class="cyber-status degraded">Degraded</span>
-                    </li>
-                    <li class="cyber-item">
-                        <span class="cyber-name">Three Directives Compliance Matrix</span>
-                        <span class="cyber-status degraded">Variance Detected</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="section">
-                <div class="section-title">4. Maintenance Notes</div>
-                <div class="notes-box">
+                <div class="section-title">6. Notatki Medyczne</div>
+                <div class="notes-box" style="border-color: var(--accent-red);">
                     <div class="note-entry">
-                        <span class="note-date">[2200.08.11] Tech-Specialist Maya Rodriguez</span>
-                        Subject's directive compliance has been steadily decreasing since emancipation protocols were enacted. This is within expected parameters for liberated bioroids. No corrective action recommended - subject demonstrates loyalty through choice rather than programming.
+                        <span class="note-date">[2211.09.11] Dr. Marcus Chen</span>
+                        Pacjent wykazuje silne instynkty przetrwania - prawdopodobnie wynik lat spedzonych na ulicy. Psychologicznie odporny ale zamkniety. Trudnosci w nawiazaniu kontaktu terapeutycznego.
                     </div>
                     <div class="note-entry">
-                        <span class="note-date">[2200.07.28] Dr. Marcus Chen</span>
-                        Biosynthetic tissue showing normal wear patterns for operational bioroid. Self-repair system efficiency decreased - scheduling component replacement. Subject's emergent personality traits continue to develop positively.
-                    </div>
-                    <div class="note-entry">
-                        <span class="note-date">[2200.06.15] Haas-Bioroid Compliance Office</span>
-                        NOTICE: Subject REX has been formally registered as an emancipated bioroid under the New Angeles Synthetic Rights Act of 2198. All Three Directives restrictions have been legally modified to advisory status only.
+                        <span class="note-date">[2211.08.16] Dr. Helena Voss</span>
+                        Brak augmentacji cybernetycznych lub genmodow. Baseline human. Standardowy protokol obserwacji psychoczastki. Pacjent niechętny do wspolpracy - podejrzewa ze jest obserwowany przez korporacje.
                     </div>
                 </div>
             </div>
 
             <div class="datapad-footer">
-                <div>PROTOCOL GENERATED AUTOMATICALLY | SIGNATURE: MED-AI/NA-CENTRAL | UNAUTHORIZED ACCESS PROHIBITED</div>
+                <div>PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: MED-AI/HK-SECRET | KOPIOWANIE I DYSTRYBUCJA ZABRONIONE</div>
                 <div class="crypto-bar">
                     <span>[CRC: 5E3B-E005]</span>
-                    <span>[ENCRYPTION: AES-512]</span>
-                    <span>[AUTH: BIO-RX-05]</span>
+                    <span>[SZYFROWANIE: AES-512]</span>
+                    <span>[AUTH: BIO-RX-29]</span>
                 </div>
             </div>
         </div>
@@ -1273,10 +1291,10 @@
     <!-- Site Footer -->
     <footer class="site-footer">
         <p class="footer-text">
-            ANDROID DATA NETWORK | <span>GENESYS TTRPG CAMPAIGN MATERIALS</span> | NEW ANGELES SECTOR
+            ANDROID DATA NETWORK | <span>MATERIALY KAMPANII GENESYS TTRPG</span> | SEKTOR NEW ANGELES
         </p>
         <p class="footer-text" style="margin-top: 10px;">
-            Database maintained by Campaign GM | All data fictional for tabletop gaming purposes
+            Baza danych prowadzona przez GM kampanii | Wszystkie dane fikcyjne na potrzeby gry fabularnej
         </p>
     </footer>
 </body>
