@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDROID DATA NETWORK | Genesys TTRPG Campaign Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400&family=Share+Tech+Mono&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-cyan: #00ffcc;
+            --accent-magenta: #ff00aa;
+            --accent-red: #ff4444;
+            --accent-orange: #ff9933;
+            --accent-yellow: #ffcc00;
+            --accent-green: #00ff88;
+            --bg-dark: #0a0a1a;
+            --bg-panel: #000f23;
+            --text-primary: #ffffff;
+            --text-secondary: #aaddff;
+        }
+
+        body {
+            font-family: 'Orbitron', 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 60%, #16213e 100%);
+            color: var(--primary-cyan);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background grid effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(0, 255, 204, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 204, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 0;
+        }
+
+        /* Floating particles animation */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--primary-cyan);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: float 15s infinite;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 14s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 11s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 1s; animation-duration: 16s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 13s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 15s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 2s; animation-duration: 12s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 4s; animation-duration: 14s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 1s; animation-duration: 11s; }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Header */
+        .site-header {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 20px auto;
+            padding: 15px 25px;
+            background: rgba(0, 15, 35, 0.8);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .site-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-decoration: none;
+            text-shadow: 0 0 10px var(--primary-cyan);
+            letter-spacing: 2px;
+        }
+
+        .site-logo span {
+            color: var(--accent-magenta);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Share Tech Mono', monospace;
+            color: rgba(0, 255, 204, 0.7);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+            background: rgba(0, 255, 204, 0.1);
+            text-shadow: 0 0 5px var(--primary-cyan);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 80px 20px 60px;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--accent-magenta), var(--primary-cyan), var(--accent-magenta));
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleShift 8s ease infinite;
+            text-shadow: none;
+            filter: drop-shadow(0 0 30px rgba(0, 255, 204, 0.5));
+        }
+
+        @keyframes titleShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-subtitle {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 1.3rem;
+            color: rgba(0, 255, 204, 0.7);
+            letter-spacing: 6px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero-tagline {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+        }
+
+        /* System Status */
+        .system-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 255, 136, 0.15);
+            border: 1px solid var(--accent-green);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            animation: statusGlow 2s ease-in-out infinite;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes statusGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 136, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(0, 255, 136, 0.5); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.9); }
+        }
+
+        /* Data Links Section */
+        .data-section {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+        }
+
+        .section-divider {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-cyan), var(--accent-magenta), var(--primary-cyan), transparent);
+            margin: 0 auto;
+        }
+
+        /* Data Cards Grid */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .data-card {
+            background: rgba(0, 15, 35, 0.95);
+            border: 2px solid rgba(0, 255, 204, 0.3);
+            border-radius: 12px;
+            padding: 35px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .data-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--accent-magenta));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .data-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 255, 204, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .data-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-8px);
+            box-shadow:
+                0 0 50px rgba(0, 255, 204, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .data-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .data-card:hover::after {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 204, 0.5));
+        }
+
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.4rem;
+            color: var(--primary-cyan);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card-description {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0, 255, 204, 0.2);
+        }
+
+        .card-count {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent-magenta);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-arrow {
+            font-size: 1.5rem;
+            color: var(--primary-cyan);
+            transition: transform 0.3s ease;
+        }
+
+        .data-card:hover .card-arrow {
+            transform: translateX(10px);
+        }
+
+        /* Coming Soon Card */
+        .data-card.coming-soon {
+            border-color: rgba(255, 255, 255, 0.1);
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .data-card.coming-soon:hover {
+            transform: none;
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        .data-card.coming-soon::before {
+            display: none;
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 153, 51, 0.2);
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.65rem;
+            padding: 4px 10px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        .site-footer {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto 30px;
+            padding: 30px;
+            background: rgba(0, 15, 35, 0.8);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-cyan);
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px var(--primary-cyan);
+        }
+
+        .footer-logo span {
+            color: var(--accent-magenta);
+        }
+
+        .footer-text {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8rem;
+            color: rgba(0, 255, 204, 0.5);
+            line-height: 1.8;
+        }
+
+        .footer-text span {
+            color: var(--primary-cyan);
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-cyan), transparent);
+            margin: 20px auto;
+        }
+
+        .footer-credits {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 15px;
+                margin: 10px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+                letter-spacing: 3px;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="index.html" class="site-logo">ANDROID<span>DATA</span></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="medical-records.html">Medical Records</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">Android Data</h1>
+        <p class="hero-subtitle">// Campaign Resource Network //</p>
+        <p class="hero-tagline">
+            Secure database for Genesys TTRPG campaign materials set in the Android universe.
+            Access classified files, personnel records, and mission data.
+        </p>
+        <div class="system-status">
+            <span class="status-dot"></span>
+            SYSTEM ONLINE — NEW ANGELES SECTOR
+        </div>
+    </section>
+
+    <!-- Data Links Section -->
+    <section class="data-section">
+        <div class="section-header">
+            <h2 class="section-title">Available Databases</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <div class="data-grid">
+            <!-- Medical Records -->
+            <a href="medical-records.html" class="data-card">
+                <span class="card-icon">🏥</span>
+                <h3 class="card-title">Medical Records</h3>
+                <p class="card-description">
+                    Classified health profiles and biometric data for registered operatives.
+                    Includes cybernetic augmentation logs and psychological assessments.
+                </p>
+                <div class="card-meta">
+                    <span class="card-count">5 Records Available</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </a>
+
+            <!-- Personnel Files - Coming Soon -->
+            <div class="data-card coming-soon">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <span class="card-icon">📁</span>
+                <h3 class="card-title">Personnel Files</h3>
+                <p class="card-description">
+                    Complete dossiers including background history, known associates,
+                    and operational capabilities for all team members.
+                </p>
+                <div class="card-meta">
+                    <span class="card-count">Database Pending</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Mission Logs - Coming Soon -->
+            <div class="data-card coming-soon">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <span class="card-icon">📡</span>
+                <h3 class="card-title">Mission Logs</h3>
+                <p class="card-description">
+                    Archived reports from completed operations, including objectives,
+                    outcomes, and post-action analysis.
+                </p>
+                <div class="card-meta">
+                    <span class="card-count">Database Pending</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Corporation Intel - Coming Soon -->
+            <div class="data-card coming-soon">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <span class="card-icon">🏢</span>
+                <h3 class="card-title">Corporation Intel</h3>
+                <p class="card-description">
+                    Intelligence files on major megacorporations including Haas-Bioroid,
+                    Jinteki, NBN, and Weyland Consortium.
+                </p>
+                <div class="card-meta">
+                    <span class="card-count">Database Pending</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Location Data - Coming Soon -->
+            <div class="data-card coming-soon">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <span class="card-icon">🗺️</span>
+                <h3 class="card-title">Location Data</h3>
+                <p class="card-description">
+                    Detailed information on key locations in New Angeles, including
+                    district maps, facility layouts, and points of interest.
+                </p>
+                <div class="card-meta">
+                    <span class="card-count">Database Pending</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </div>
+
+            <!-- Equipment Catalog - Coming Soon -->
+            <div class="data-card coming-soon">
+                <span class="coming-soon-badge">Coming Soon</span>
+                <span class="card-icon">⚙️</span>
+                <h3 class="card-title">Equipment Catalog</h3>
+                <p class="card-description">
+                    Specifications and acquisition data for weapons, cybernetics,
+                    software, and other operational equipment.
+                </p>
+                <div class="card-meta">
+                    <span class="card-count">Database Pending</span>
+                    <span class="card-arrow">→</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-logo">ANDROID<span>DATA</span></div>
+        <p class="footer-text">
+            SECURE DATA NETWORK | <span>GENESYS TTRPG CAMPAIGN MATERIALS</span>
+        </p>
+        <p class="footer-text">
+            Set in the Android Universe by Fantasy Flight Games
+        </p>
+        <div class="footer-divider"></div>
+        <p class="footer-credits">
+            All content fictional for tabletop gaming purposes | Campaign GM Resource Hub
+        </p>
+    </footer>
+</body>
+</html>
