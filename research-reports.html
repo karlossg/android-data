@@ -375,6 +375,52 @@
             opacity: 0.5;
         }
 
+        /* Collapsible cards */
+        .report .card-toggle {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        .report .card-toggle::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            transition: transform 0.2s ease;
+        }
+
+        .report.collapsed .card-toggle::after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+
+        .report .card-body {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.2s ease;
+            max-height: 5000px;
+            opacity: 1;
+        }
+
+        .report.collapsed .card-body {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .report .card-summary {
+            display: none;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            letter-spacing: 1px;
+        }
+
+        .report.collapsed .card-summary {
+            display: block;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .site-header {
@@ -518,9 +564,15 @@
         }
 
         function renderReport(report) {
-            let html = `<div class="report">`;
+            // Build a short summary from meta date + report number
+            const summary = (report.meta.data || '') + ' // ' + (report.meta.nrRaportu || '');
+
+            let html = `<div class="report collapsed">`;
             html += `<div class="report-tag classified">${escapeHtml(report.tag)}</div>`;
-            html += `<div class="report-header">${safeRedact(report.header)}</div>`;
+            html += `<div class="report-header card-toggle">${safeRedact(report.header)}</div>`;
+            html += `<div class="card-summary">${escapeHtml(summary)}</div>`;
+
+            html += `<div class="card-body">`;
             html += `<div class="report-meta">${renderMeta(report.meta)}</div>`;
 
             if (report.warning) {
@@ -533,6 +585,8 @@
             for (const section of report.sections) {
                 html += renderSection(section);
             }
+
+            html += `</div>`; // .card-body
 
             html += `<div class="report-footer">`;
             html += escapeHtml(report.footer.text);
@@ -586,6 +640,13 @@
             html += `</footer>`;
 
             document.getElementById('app').innerHTML = html;
+
+            // Toggle cards on header click
+            document.querySelectorAll('.report .card-toggle').forEach(function(el) {
+                el.addEventListener('click', function() {
+                    this.closest('.report').classList.toggle('collapsed');
+                });
+            });
         }
 
         fetch('data/research-reports.json')

@@ -648,6 +648,53 @@
             letter-spacing: 1px;
         }
 
+        /* Collapsible cards */
+        .datapad .card-toggle {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            z-index: 3;
+        }
+
+        .datapad .card-toggle::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            transition: transform 0.2s ease;
+        }
+
+        .datapad.collapsed .card-toggle::after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+
+        .datapad .card-body {
+            overflow: hidden;
+            transition: max-height 0.3s ease, opacity 0.2s ease;
+            max-height: 5000px;
+            opacity: 1;
+        }
+
+        .datapad.collapsed .card-body {
+            max-height: 0;
+            opacity: 0;
+        }
+
+        .datapad .card-summary {
+            display: none;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            padding: 8px 0;
+            letter-spacing: 1px;
+        }
+
+        .datapad.collapsed .card-summary {
+            display: block;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .site-header {
@@ -753,10 +800,13 @@
         const container = document.getElementById('records-container');
         data.subjects.forEach(function(subject) {
             let html = '';
-            html += '<div class="datapad infected">';
+            html += '<div class="datapad infected collapsed">';
             html += '<div class="scan-beam"></div>';
             html += '<div class="status-bar critical">' + esc(subject.statusBar) + '</div>';
-            html += '<h2 class="header">' + esc(subject.header) + '</h2>';
+            html += '<h2 class="header card-toggle">' + esc(subject.header) + '</h2>';
+            html += '<div class="card-summary">' + esc(subject.warning.details[subject.warning.details.length - 1]) + '</div>';
+
+            html += '<div class="card-body">';
 
             // Classification
             const cl = subject.classification;
@@ -841,7 +891,9 @@
                 html += '</div>'; // .section
             });
 
-            // Footer
+            html += '</div>'; // .card-body
+
+            // Footer (always visible)
             const f = subject.footer;
             html += '<div class="datapad-footer">';
             html += '<div>' + esc(f.text) + '</div>';
@@ -854,6 +906,13 @@
 
             html += '</div>'; // .datapad
             container.innerHTML += html;
+        });
+
+        // Toggle cards on header click
+        document.querySelectorAll('.datapad .card-toggle').forEach(function(el) {
+            el.addEventListener('click', function() {
+                this.closest('.datapad').classList.toggle('collapsed');
+            });
         });
 
         // Locked panel
