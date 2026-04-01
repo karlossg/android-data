@@ -14,8 +14,8 @@
       "tag": "OMEGA-9",
       "header": "[RB-EXP/001] Raport Wstepny: Ekstrakcja i Klasyfikacja Agenta Biologicznego",
       "meta": {
-        "nrRaportu": "RB-EXP/001-2208",
-        "data": "14.03.2208",
+        "nrRaportu": "RB-EXP/001-2203",
+        "data": "22.07.2203",
         "autor": "Dr. A. Kas{{REDACTED}} // IDENTYFIKATOR: AK-01",
         "osrodek": "Stacja Badawcza HK-{{REDACTED}}, Orbita obiektu w systemie joviańskim",
         "program": "KONWERGENCJA // FAZA 0: IDENTYFIKACJA"
@@ -320,7 +320,7 @@
           "type": "text",
           "paragraphs": [
             "1. Podmioty eksponowane przetransportowane do placowki interwencyjnej [LOKALIZACJA UTAJNIONA] w ciagu 6 godzin od incydentu. Podmioty wprowadzone w kriostaze. Podmioty utrzymywane w stanie kriogenicznym z cyklicznymi ekstrakcjami diagnostycznymi (co 14 cykli dobowych) bez wybudzania.",
-            "2. Jednostka transportowa poddana dekontaminacji termicznej. Pozostali pasazerowie (37 osob) przebadani - brak detekcji Agenta w surowicy (znajdowali sie poza strefa bezposredniej dyspersji).",
+            "2. Jednostka transportowa poddana dekontaminacji termicznej. Pozostali pasazerowie (2 osoby) przebadani - brak detekcji Agenta w surowicy (znajdowali sie poza strefa bezposredniej dyspersji). Obezwladnieni gazem usypiajacym i przekazani sluzbom portowym z protokolem amnezji farmakologicznej.",
             "3. Kurier programu (ID: {{REDACTED}}) nie przezyl incydentu (przyczyna smierci: obrazenia mechaniczne, niezwiazane z Agentem).",
             "4. Zgodnie z DYREKTYWA OPERACYJNA {{REDACTED}}, podmioty eksponowane objete protokolem obserwacyjnym w kriostaza. Cykliczne ekstrakcje diagnostyczne od 15.08.2211. Podmioty NIE sa wybudzane - wszystkie badania prowadzone na podmiotach nieprzytomnych w fazie czesciowej dekriogenizacji."
           ]
