@@ -1,0 +1,361 @@
+{
+  "page": {
+    "title": "RAPORTY BADAWCZE | KLASYFIKACJA: OMEGA-9",
+    "pageTitle": "Raporty Badawcze",
+    "pageSubtitle": "// ARCHIWUM EKSPERYMENTALNE // KLASYFIKACJA: OMEGA-9 // NIEAUTORYZOWANY DOSTEP //",
+    "status": {
+      "label": "UWAGA: NIEAUTORYZOWANY DOSTEP WYKRYTY",
+      "records": "REKORDY: 5",
+      "source": "ZRODLO: SEKTOR BADAWCZY [UTAJNIONY]"
+    }
+  },
+  "reports": [
+    {
+      "tag": "OMEGA-9",
+      "header": "[RB-EXP/001] Raport Wstepny: Ekstrakcja i Klasyfikacja Agenta Biologicznego",
+      "meta": {
+        "nrRaportu": "RB-EXP/001-2208",
+        "data": "14.03.2208",
+        "autor": "Dr. A. Kas{{REDACTED}} // IDENTYFIKATOR: AK-01",
+        "osrodek": "Stacja Badawcza HK-{{REDACTED}}, Orbita obiektu w systemie joviańskim",
+        "program": "KONWERGENCJA // FAZA 0: IDENTYFIKACJA"
+      },
+      "warning": null,
+      "sections": [
+        {
+          "title": "Streszczenie",
+          "type": "text",
+          "paragraphs": [
+            "Podczas rutynowych prac ekstrakcyjnych na obiekcie o orbicie retrogradowej (inklinacja ~165°, srednica ~6.4km, polozenie: system jovianski, grupa nieregularna) odnotowano obecnosc niezidentyfikowanego czynnika biologicznego w probkach regolitu pobranego z glebokosci 1.7km ponizej powierzchni. Czynnik wykazuje cechy organiczne pomimo ekstremalnych warunkow srodowiskowych panujacych na obiekcie (temperatura powierzchni: -143°C, brak atmosfery, ekspozycja radiacyjna: 540 mSv/dobę).",
+            "Wstepna analiza spektrometryczna potwierdza strukture krystaliczno-organiczna o nieznanym dotychczas ukladzie wiazań molekularnych. Czynnik wykazuje zdolnosc do samoreplikacji w warunkach kontrolowanych przy temperaturze powyzej -40°C."
+          ]
+        },
+        {
+          "title": "Parametry Ekstrakcji",
+          "type": "dataGrid",
+          "fields": [
+            {
+              "label": "Lokalizacja",
+              "value": "Ksiezyc jovianski (grupa Kal{{REDACTED}}) // Koncesja wydobywcza HK-JOV/7N // Sektor 7-Polnoc // Glebina: 1.7km"
+            },
+            {
+              "label": "Typ Podloza",
+              "value": "Regolit krzemianowy z inkluzjami siarczkowymi"
+            },
+            {
+              "label": "Stezenie w Probce",
+              "value": "0.0003% masy probki (47mg / 15.6kg regolitu)"
+            },
+            {
+              "label": "Robocze Oznaczenie",
+              "value": "Agent Psi-7C (od sektora wydobywczego 7C, w ktorym dokonano odkrycia)"
+            },
+            {
+              "label": "Szac. Zasoby",
+              "value": "Nieznane. Odwiert eksploatacyjny wskazuje na zyle ciagnaca sie w kierunku jadra obiektu."
+            }
+          ]
+        },
+        {
+          "title": "Obserwacje Wstepne",
+          "type": "text",
+          "paragraphs": [
+            "Agent Psi-7C w warunkach kontrolowanych (temperatura: 22°C, cisnienie: 1013 hPa, atmosfera: N2/O2) wykazuje nastepujace wlasciwosci:",
+            "1. Samoreplikacja w obecnosci materii organicznej (tempo: ~3.2% masy/h).\n2. Selektywny tropizm wobec tkanki nerwowej ssakow (potwierdzone na probkach in vitro).\n3. Zdolnosc do integracji z lancuchami DNA nosiciela na poziomie retrowiralnym.\n4. Emisja niskoenergetycznego promieniowania w zakresie psi (nieznany mechanizm).",
+            "UWAGA: Punkt 4 wymaga weryfikacji. Instrumenty pomiarowe na stacji nie sa skalibrowane do detekcji tego typu emisji. Wnioskuje o przeslanie zestawu sensorow kwantowych klasy Faraday-IX."
+          ]
+        },
+        {
+          "title": "Wnioski i Rekomendacje",
+          "type": "text",
+          "paragraphs": [
+            "Odkrycie Agenta Psi-7C stanowi bezprecedensowy przelom w dziedzinie astrobiologii. Zdolnosc czynnika do interakcji z materialem genetycznym ssakow sugeruje potencjalne zastosowania w {{REDACTED}}.",
+            "Rekomendacja: natychmiastowe utworzenie dedykowanego programu badawczego o klasyfikacji nie nizszej niz OMEGA-7. Wnioskuje o rozbudowe osrodka HK-Kal{{REDACTED}} o modul biokontenmentu klasy IV i przydział zespolu minimum 12 badaczy-specjalistow z dziedziny genomiki, wirusologii i {{REDACTED}}."
+          ]
+        }
+      ],
+      "footer": {
+        "text": "RAPORT WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC/RB | DYSTRYBUCJA ZABRONIONA",
+        "crypto": [
+          "CRC: A1B2-EX01",
+          "SZYFROWANIE: QE-1024/ENTANGLED",
+          "AUTH: AK-01"
+        ]
+      }
+    },
+    {
+      "tag": "OMEGA-9",
+      "header": "[RB-EXP/017] Interakcja Agenta Psi-7C z Tkankami Zywego Nosiciela",
+      "meta": {
+        "nrRaportu": "RB-EXP/017-2209",
+        "data": "22.01.2209",
+        "autor": "BADACZ-REFERENT: NL-03 // Zatwierdzone przez: AK-01",
+        "osrodek": "Stacja Badawcza HK-{{REDACTED}}, Modul Biokontenmentu IV",
+        "program": "KONWERGENCJA // FAZA II: INTERAKCJA TKANKOWA",
+        "kontrakt": "HK-MIL/2208-{{REDACTED}} // Dyrektor Programu: Dr. A. Kas{{REDACTED}}"
+      },
+      "warning": {
+        "label": "Incydent Bezpieczenstwa Biologicznego",
+        "text": "W trakcie eksperymentu EXP-017/T3 doszlo do niekontrolowanej ekspozycji technika laboratoryjnego (ID: TL-889) na aerozol zawierajacy Agenta Psi-7C. Podmiot poddany obserwacji zgodnie z protokolem awaryjnym. Patrz: Zalacznik B (utajniony)."
+      },
+      "sections": [
+        {
+          "title": "Cel Eksperymentu",
+          "type": "text",
+          "paragraphs": [
+            "Okreslenie kinetyki penetracji tkankowej Agenta Psi-7C w warunkach in vivo. Ocena selektywnosci tropizmu tkankowego oraz tempa integracji retrowiralnej z genomem nosiciela klasy Mammalia."
+          ]
+        },
+        {
+          "title": "Metodologia",
+          "type": "text",
+          "paragraphs": [
+            "Podmioty testowe: 8 osobnikow naczelnych (Pan troglodytes), masa ciala 40-55kg, samce, wiek 6-9 lat. Droga podania: aerozolowa (symulacja niekontrolowanej ekspozycji srodowiskowej).",
+            "Stezenie: 0.001mg/m³ (prog minimalny), 0.01mg/m³ (prog sredni), 0.1mg/m³ (prog wysoki). Czas ekspozycji: 120 sekund. Okres obserwacji: 180 dni."
+          ]
+        },
+        {
+          "title": "Wyniki - Kinetyka Penetracji",
+          "type": "table",
+          "headers": ["Parametr", "Prog Min.", "Prog Sred.", "Prog Wys."],
+          "rows": [
+            ["Czas do detekcji w surowicy", "72h", "24h", { "value": "4h", "style": "danger" }],
+            ["Czas do integracji genomowej", "14 dni", "7 dni", { "value": "48h", "style": "danger" }],
+            ["Tkanki pierwotnie zainfekowane", "Nerwowa", "Nerwowa + naczyniowa", { "value": "Wielotkankowa", "style": "danger" }],
+            ["Tempo replikacji (masa/h)", "0.8%", "2.1%", { "value": "5.7%", "style": "danger" }],
+            ["Szacowany horyzont degeneracji", "240-300 dni", "150-200 dni", { "value": "40-70 dni", "style": "danger" }],
+            ["Odwracalnosc (kriostaza)", "Tak (do dnia 30)", "Czesciowa (do dnia 14)", { "value": "Brak", "style": "danger" }]
+          ]
+        },
+        {
+          "title": "Obserwacje Szczegolne",
+          "type": "timestamped",
+          "entries": [
+            {
+              "timestamp": "[Dzien 45]",
+              "text": "Podmiot testowy #3 (prog sredni) wykazuje zaburzenia behawioralne: agresja wobec wspoltowarzyszy, dezorientacja przestrzenna, epizody kataleptyczne trwajace 2-8 minut. Rezonans neuronalny wykazuje anomalna aktywnosc w korze przedczolowej i ciele migdalowatym."
+            },
+            {
+              "timestamp": "[Dzien 112]",
+              "text": "U podmiotow testowych z progu minimalnego odnotowano poczatek zmian neurodegeneracyjnych. Proces jest wolniejszy niz prognozowano. Agent wykazuje zdolnosc do \"koegzystencji\" z tkankami nosiciela przez okres znacznie dluzszy niz wskazywaly modele predykcyjne."
+            },
+            {
+              "timestamp": "[Dzien 178]",
+              "text": "Wszystkie podmioty z progu wysokiego nie zyja. Podmioty z progu sredniego: 3/3 w fazie terminalnej. Podmioty z progu minimalnego: 2/2 w fazie postepujacej, ale stabilnej. ADNOTACJA AK-01: Prog minimalny stanowi optymalny zakres dla {{REDACTED}}. Przy tym stezeniu nosiciel zachowuje pelna funkcjonalnosc przez szacowane 7-9 miesiecy."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "RAPORT WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC/RB | DYSTRYBUCJA ZABRONIONA",
+        "crypto": [
+          "CRC: C3D4-EX17",
+          "SZYFROWANIE: QE-1024/ENTANGLED",
+          "AUTH: NL-03/AK-01"
+        ]
+      }
+    },
+    {
+      "tag": "OMEGA-9",
+      "header": "[RB-EXP/034] Optymalizacja Systemu Dystrybucji Aerozolowej Agenta Psi-7C",
+      "meta": {
+        "nrRaportu": "RB-EXP/034-2210",
+        "data": "08.11.2210",
+        "autor": "BADACZ-REFERENT: DV-07 // Zatwierdzone przez: AK-01",
+        "osrodek": "Stacja Badawcza HK-{{REDACTED}}, Modul Testow Aplikacyjnych",
+        "program": "KONWERGENCJA // FAZA IV: SYSTEMY DYSTRYBUCJI",
+        "zleceniodawca": "Dyrekcja Dzialu Zastosowan Specjalnych, H{{REDACTED}}-K{{REDACTED}}"
+      },
+      "warning": null,
+      "sections": [
+        {
+          "title": "Kontekst Operacyjny",
+          "type": "text",
+          "paragraphs": [
+            "Na podstawie wynikow FAZY II i III, kierownik programu (AK-01) zlecil opracowanie metody kontrolowanej dyspersji Agenta Psi-7C w zamknietych srodowiskach habitacyjnych. Parametry docelowe: osiagniecie progu minimalnego ekspozycji (0.001mg/m³) na powierzchni 200-500m² w czasie nie dluzszym niz 30 sekund.",
+            "ADNOTACJA: Niniejszy raport dotyczy wylacznie aspektow technicznych systemu dystrybucji. Kwestie {{REDACTED}} reguluje odrebny dokument (patrz: DYREKTYWA OPERACYJNA {{REDACTED}})."
+          ]
+        },
+        {
+          "title": "Warianty Testowane",
+          "type": "table",
+          "headers": ["Wariant", "Metoda", "Czas Dyspersji", "Jednorodnosc", "Detekowalnosc"],
+          "rows": [
+            ["A-1", "Nebulizator ultradzwiekowy", "45s", "78%", { "value": "Niska", "style": "muted" }],
+            ["A-2", "Pojemnik bioreaktorowy z dekompresja", "8s", "94%", { "value": "Srednia", "style": "muted" }],
+            ["A-3", "Mikrokapsulkowanie w systemie wentylacyjnym", "120s", "99%", { "value": "Minimalna", "style": "muted" }],
+            ["A-4", "Fiolka kompresyjna (reczna)", "3s", "41%", { "value": "Wysoka", "style": "muted" }]
+          ]
+        },
+        {
+          "title": "Rekomendacja",
+          "type": "text",
+          "paragraphs": [
+            "Wariant A-2 (pojemnik bioreaktorowy z mechanizmem dekompresyjnym) stanowi optymalne rozwiazanie pod wzgledem stosunku czasu dyspersji do jednorodnosci pokrycia. Pojemnik klasy IV zapewnia stabilnosc Agenta w transporcie przez okres do 180 dni w temperaturze otoczenia.",
+            "Wariant A-3 rekomendowany do zastosowan w obiektach o duzej kubaturze, gdzie priorytetem jest brak detekcji. Wymaga jednak dostepu do infrastruktury wentylacyjnej obiektu docelowego.",
+            "ADNOTACJA AK-01: Zatwierdzam wariant A-2 jako podstawowy dla operacji typu {{REDACTED}}. Wariant A-3 jako rezerwowy dla obiektow klasy {{REDACTED}}. Polecam rozpoczecie produkcji 50 jednostek pojemnikow klasy IV do konca kwartalu."
+          ]
+        }
+      ],
+      "footer": {
+        "text": "RAPORT WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC/RB | DYSTRYBUCJA ZABRONIONA",
+        "crypto": [
+          "CRC: E5F6-EX34",
+          "SZYFROWANIE: QE-1024/ENTANGLED",
+          "AUTH: DV-07/AK-01"
+        ]
+      }
+    },
+    {
+      "tag": "OMEGA-9",
+      "header": "[RB-EXP/041] Protokoly Neutralizacji i Stabilizacji Nosicieli Agenta Psi-7C",
+      "meta": {
+        "nrRaportu": "RB-EXP/041-2210",
+        "data": "03.04.2210",
+        "autor": "BADACZ-REFERENT: VX-17 // Zatwierdzone przez: AK-01",
+        "osrodek": "Stacja Badawcza HK-{{REDACTED}}, Modul Kriogeniczny",
+        "program": "KONWERGENCJA // FAZA III: SRODKI ZARADCZE",
+        "finansowanie": "Budzet wewnetrzny HK // Ref: HK-FIN/KONW-2210-Q2"
+      },
+      "warning": {
+        "label": "Wniosek Krytyczny",
+        "text": "Na obecnym etapie badan nie istnieje metoda calkowitej eliminacji Agenta Psi-7C z organizmu nosiciela po osiagnieciu fazy integracji genomowej (>14 dni od ekspozycji na progu minimalnym). Jedyna dostepna opcja to kriostaza, ktora zatrzymuje proces degeneracji, ale nie eliminuje Agenta. Po wyprowadzeniu z kriostazy degradacja wznawia sie od punktu w ktorym zostala zatrzymana."
+      },
+      "sections": [
+        {
+          "title": "Cel",
+          "type": "text",
+          "paragraphs": [
+            "Opracowanie protokolow umozliwiajacych: (a) calkowita eliminacje Agenta Psi-7C z organizmu nosiciela, (b) spowolnienie lub zatrzymanie procesu degeneracji tkankowej, (c) stabilizacje nosiciela w stanie funkcjonalnym na okres przekraczajacy szacowany horyzont degeneracji."
+          ]
+        },
+        {
+          "title": "Wyniki Testow Eliminacyjnych",
+          "type": "table",
+          "headers": ["Metoda", "Skutecznosc", "Efekty Uboczne", "Status"],
+          "rows": [
+            ["Terapia antyretrowiralna (standardowa)", { "value": "0%", "style": "danger" }, "Brak", { "value": "Odrzucona", "style": "muted" }],
+            ["Terapia antyretrowiralna (eksperymentalna, celowana)", { "value": "3-7%", "style": "danger" }, "Niewydolnosc wielonarzadowa", { "value": "Odrzucona", "style": "muted" }],
+            ["Naswietlanie UV-C tkanek (in situ)", { "value": "12%", "style": "danger" }, "Masowa nekroza tkanek naswietlanych", { "value": "Odrzucona", "style": "muted" }],
+            ["Terapia genowa CRISPR-Cas13 (celowana)", "28-34%", "Reakcja autoimmunologiczna (ciężka)", { "value": "W trakcie optymalizacji", "style": "muted" }],
+            ["Kriostaza pelna (-196°C) + wyplukanie osocza", "~100% (zahamowanie)", "Agent nieaktywny, ale obecny. Reaktywacja po rozgrzaniu.", "Jedyna metoda stabilizacji"]
+          ]
+        },
+        {
+          "title": "Notatka Kierownika Programu",
+          "type": "timestamped",
+          "entries": [
+            {
+              "timestamp": "[ADNOTACJA AK-01 // 05.04.2210]",
+              "text": "Brak metody eliminacyjnej stanowi istotne ograniczenie operacyjne, ale rownoczesnie potwierdza {{REDACTED}} Agenta jako instrumentu o dzialaniu nieodwracalnym. W kontekscie zastosowan przewidzianych w DYREKTYWIE {{REDACTED}}, nieodwracalnosc jest cecha pozadana."
+            },
+            {
+              "timestamp": "",
+              "text": "Protokol kriogeniczny nalezy utrzymac jako srodek zabezpieczajacy dla personelu osrodka w razie przypadkowej ekspozycji. Nie przewiduje sie jego udostepnienia poza struktura programu."
+            },
+            {
+              "timestamp": "",
+              "text": "— Dr. Antoni Kasiliev, Dyrektor Programu Konwergencja, Stacja HK-Kal{{REDACTED}}"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "RAPORT WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC/RB | DYSTRYBUCJA ZABRONIONA",
+        "crypto": [
+          "CRC: G7H8-EX41",
+          "SZYFROWANIE: QE-1024/ENTANGLED",
+          "AUTH: VX-17/AK-01"
+        ]
+      }
+    },
+    {
+      "tag": "OMEGA-9",
+      "header": "[RB-INC/007] Raport z Incydentu: Niekontrolowana Ekspozycja - Transport Orbitalny",
+      "meta": {
+        "nrRaportu": "RB-INC/007-2211",
+        "data": "12.06.2211",
+        "autor": "BADACZ-REFERENT: VX-17 // OFICER BEZPIECZENSTWA: KR-02",
+        "osrodek": "[RAPORT ZDALNY] // Przeslano z placowki interwencyjnej HK-{{REDACTED}}",
+        "program": "KONWERGENCJA // INCYDENT OPERACYJNY",
+        "powiadomiony": "Dr. A. Kasiliev (AK-01), Dyrektor Programu Konwergencja"
+      },
+      "warning": {
+        "label": "Incydent Klasy Krytycznej",
+        "text": "Niekontrolowana ekspozycja 5 osob cywilnych na Agenta Psi-7C w warunkach transportu orbitalnego. Pojemnik bioreaktorowy klasy IV (wariant A-2) utracil integralnosc podczas incydentu na pokladzie jednostki transportowej. Przyczyna: kolizja fizyczna z pojemnikiem w trakcie zamieszania na pokladzie."
+      },
+      "sections": [
+        {
+          "title": "Przebieg Zdarzenia",
+          "type": "timestamped",
+          "entries": [
+            {
+              "timestamp": "[08.06.2211 // 14:17 UTC+1]",
+              "text": "Jednostka transportowa realizujaca lot orbitalny na trasie regularnej. Na pokladzie znajdowal sie pojemnik bioreaktorowy klasy IV (nr seryjny: BR-IV-0347) zawierajacy 2.4mg Agenta Psi-7C w stanie suspensji kriogenicznej. Pojemnik transportowany przez kuriera programu (ID: {{REDACTED}}) w opakowaniu standardowym, bez oznaczen zewnetrznych."
+            },
+            {
+              "timestamp": "[08.06.2211 // 14:22 UTC+1]",
+              "text": "Na pokladzie doszlo do konfrontacji miedzy pasazerami (przyczyna nieustalona - prawdopodobnie incydent kryminalny niezwiazany z ladunkiem). W trakcie zamieszania pojemnik BR-IV-0347 zostal mechanicznie uszkodzony. Aktywacja mechanizmu dekompresyjnego nastapila w niekontrolowanych warunkach."
+            },
+            {
+              "timestamp": "[08.06.2211 // 14:23 UTC+1]",
+              "text": "Dyspersja aerozolowa Agenta Psi-7C w zamknietej przestrzeni kabiny pasazerskiej (~180m²). Szacowane stezenie: 0.0008-0.0015mg/m³ (prog minimalny). Czas ekspozycji przed aktywacja systemu filtracyjnego: ~90 sekund."
+            }
+          ]
+        },
+        {
+          "title": "Podmioty Eksponowane",
+          "type": "table",
+          "headers": ["Oznaczenie", "Cykl Zyciowy", "Klas. Somatyczna", "Szac. Stezenie", "Prognoza"],
+          "rows": [
+            ["ALPHA-001", "44", "Baseline", "~0.001mg/m³", { "value": "210-270 dni", "style": "danger" }],
+            ["BETA-002", "33", "Augm. egzosomatyczna", "~0.001mg/m³", { "value": "210-270 dni", "style": "danger" }],
+            ["GAMMA-003", "31", "Baseline", "~0.0012mg/m³", { "value": "210-270 dni", "style": "danger" }],
+            ["DELTA-004", "20", "Mod. endosomatyczna", "~0.0008mg/m³", { "value": "210-270 dni", "style": "danger" }],
+            ["EPSILON-005", "29", "Baseline", "~0.001mg/m³", { "value": "210-270 dni", "style": "danger" }]
+          ]
+        },
+        {
+          "title": "Podjete Dzialania",
+          "type": "text",
+          "paragraphs": [
+            "1. Podmioty eksponowane przetransportowane do placowki interwencyjnej [LOKALIZACJA UTAJNIONA] w ciagu 6 godzin od incydentu. Podmioty wprowadzone w kriostaze. Podmioty utrzymywane w stanie kriogenicznym z cyklicznymi ekstrakcjami diagnostycznymi (co 14 cykli dobowych) bez wybudzania.",
+            "2. Jednostka transportowa poddana dekontaminacji termicznej. Pozostali pasazerowie (37 osob) przebadani - brak detekcji Agenta w surowicy (znajdowali sie poza strefa bezposredniej dyspersji).",
+            "3. Kurier programu (ID: {{REDACTED}}) nie przezyl incydentu (przyczyna smierci: obrazenia mechaniczne, niezwiazane z Agentem).",
+            "4. Zgodnie z DYREKTYWA OPERACYJNA {{REDACTED}}, podmioty eksponowane objete protokolem obserwacyjnym w kriostaza. Cykliczne ekstrakcje diagnostyczne od 15.08.2211. Podmioty NIE sa wybudzane - wszystkie badania prowadzone na podmiotach nieprzytomnych w fazie czesciowej dekriogenizacji."
+          ]
+        },
+        {
+          "title": "Notatka Kierownika Programu",
+          "type": "timestamped",
+          "entries": [
+            {
+              "timestamp": "[ADNOTACJA AK-01 // 14.06.2211]",
+              "text": "Incydent stanowi nieplanowana, ale wartosciowa okazje obserwacyjna. Pieciu nosicieli o zroznicowanym profilu somatycznym (baseline, augmentacja egzosomatyczna, modyfikacja endosomatyczna) eksponowanych na zblizone stezenie Agenta w identycznych warunkach srodowiskowych. Jest to pierwszy przypadek ekspozycji Homo sapiens poza warunkami laboratoryjnymi."
+            },
+            {
+              "timestamp": "",
+              "text": "Polecam utrzymanie podmiotow w kriostaza z cyklicznymi ekstrakcjami diagnostycznymi. Wybudzenie: niedopuszczalne bez mojej osobistej autoryzacji. Podmioty nie moga dowiedziec sie o naturze kontaminacji, o istnieniu programu, ani o fakcie ze sa przedmiotem badan. Kriostaza eliminuje ryzyko ujawnienia informacji."
+            },
+            {
+              "timestamp": "",
+              "text": "Dane z ekstrakcji diagnostycznych beda stanowic unikalna baze porownawcza dla dalszych faz programu. Grupa 5 podmiotow o zroznicowanym profilu somatycznym (baseline x3, augm. egzosomatyczna x1, mod. endosomatyczna x1) w identycznych warunkach ekspozycji - bezprecedensowa okazja badawcza. W razie potrzeby transportu do osrodka glownego celem {{REDACTED}} - podmioty pozostaja w kriostaza na czas transferu."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "RAPORT WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC/RB | DYSTRYBUCJA ZABRONIONA",
+        "crypto": [
+          "CRC: K9L0-IN07",
+          "SZYFROWANIE: QE-1024/ENTANGLED",
+          "AUTH: VX-17/KR-02/AK-01"
+        ]
+      }
+    }
+  ],
+  "footer": {
+    "line1": "ANDROID DATA NETWORK | ARCHIWUM EKSPERYMENTALNE | SEKTOR OPERACYJNY",
+    "line2": "NIEAUTORYZOWANY DOSTEP ZAREJESTROWANY // ADRES SIECIOWY PODMIOTU PRZEKAZANY DO ZESPOLU BEZPIECZENSTWA"
+  }
+}

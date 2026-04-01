@@ -1,0 +1,639 @@
+{
+  "page": {
+    "title": "DOKUMENTACJA LABORATORYJNA | KLASYFIKACJA: OMEGA",
+    "pageTitle": "Dokumentacja Laboratoryjna",
+    "pageSubtitle": "// PROTOKOL OBSERWACYJNY GRUPY TESTOWEJ PSI-7C // DOSTEP OGRANICZONY //",
+    "status": {
+      "label": "REPOZYTORIUM: ONLINE",
+      "records": "PODMIOTY TESTOWE: 6",
+      "lastSync": "OSTATNIA AKTUALIZACJA: 2211.09.15 // 14:32 UTC+1",
+      "access": "AUTORYZACJA: POZIOM OMEGA-7"
+    }
+  },
+  "subjects": [
+    {
+      "id": "ALPHA-001",
+      "statusBar": "WEKTOR: AKTYWNY // ANOMALIA BEHAWIORALNA",
+      "header": "[LAB/PSI-7C-ALPHA-001] PODMIOT TESTOWY",
+      "classification": {
+        "klasyfikacja": "OMEGA-4 // DOSTEP WYLACZNIE DLA PERSONELU UPRAWNIONEGO",
+        "typDokumentu": "KARTA OBSERWACJI PODMIOTU - PROGRAM KONWERGENCJI PSI-7C",
+        "znacznikCzasowy": "15.09.2211 14:32 UTC+1",
+        "placowka": "OSRODEK BADAWCZY [KLASYFIKACJA UTAJNIONA] // LOKALIZACJA: [ZASTRZEZONE]"
+      },
+      "warning": {
+        "text": "KONTAMINACJA AKTYWNA // AGENT PSI-7C",
+        "details": [
+          "Wektor zakazenia: dekompresja pojemnika BR-IV-0347 // prom \"Srebrny Pyl\", 08.06.2211",
+          "SZACOWANY HORYZONT TEMPORALNY: 230-280 CYKLI DOBOWYCH (KOREKTA +20d // patrz: anomalia)"
+        ]
+      },
+      "sections": [
+        {
+          "title": "Dane Identyfikacyjne Podmiotu",
+          "type": "dataGrid",
+          "data": {
+            "Oznaczenie": "ALPHA-001",
+            "Nr Referencyjny": "7C-19-A-001",
+            "Klasyfikacja Biologiczna": {
+              "value": "Homo sapiens (Skontaminowany - Nosiciel Agenta Psi-7C)",
+              "style": "critical"
+            },
+            "Hematotyp": "0-Rh(-) // KONTAMINACJA POTWIERDZONA W SUROWICY",
+            "Cykl Zyciowy": "44 obiegowe",
+            "Klasyfikacja Somatyczna": "Baseline // Brak modyfikacji endo- lub egzosomatycznych",
+            "Budowa Ciala": "179cm / szerokie barki, silne kończyny gorne, nadwaga brzuszna (+8kg vs. norma BMI)",
+            "Profil Zawodowy": "NIEZWERYFIKOWANY // Brak rekordu w rejestrach zatrudnienia. Inspekcja somatyczna sugeruje trening wojskowy lub pricsec.",
+            "Dyspozycja": {
+              "value": "KRIOSTAZA KONTROLOWANA // EKSTRAKCJA DIAGNOSTYCZNA CO 14 CYKLI",
+              "style": "critical"
+            }
+          }
+        },
+        {
+          "title": "Dane Biometryczne / Status Rejestrowy",
+          "type": "dataGrid",
+          "data": {
+            "Dermatoglify": "Zarejestrowane przy przyjęciu // REF: BIO-A001-DRM // BRAK DOPASOWANIA W BAZACH DANYCH",
+            "Skan Siatkówki": "Zarejestrowany // BRAK DOPASOWANIA W BAZACH DANYCH // Lekkie zmętnienie soczewki lewej",
+            "Status Rejestrowy": {"value": "DISENFRANCISTO // Podmiot nieobecny w rejestrach obywatelskich, podatkowych, ubezpieczeniowych ani wojskowych. Brak numeru SIN.", "style": "warning"},
+            "Tozsamosc": {"value": "NIEZWERYFIKOWANA // Brak dokumentow przy podmiocie. Brak dopasowania biometrycznego w dostepnych bazach.", "style": "warning"},
+            "Dermopigmentacja": "Calvitie totalna. Rozlegla pigmentacja kranialna - motywy antysystemowe i antykorporacyjne",
+            "Oczy": "Ciemnozielone",
+            "Cechy Zewnetrzne": "Zarost (broda + wasy), obuwie taktyczne klasy wojskowej, odziez typu kilt (ciemno-oliwkowa). Regularne wdychanie subst. pirolitycznych (cygara)"
+          }
+        },
+        {
+          "title": "Biomarkery Agenta Psi-7C - Seria Pomiarowa",
+          "type": "table",
+          "headers": ["Data Pomiaru", "Stezenie w Surowicy", "Integracja Genomowa", "Aktywnosc Neuronalna", "Tempo Replikacji"],
+          "rows": [
+            ["15.08.2211", "0.0004 ng/mL", "2.1%", "Norma", {"value": "0.6%/h", "style": "muted"}],
+            ["01.09.2211", "0.0011 ng/mL", "4.8%", "+12% vs. baseline", {"value": "0.7%/h", "style": "muted"}],
+            ["15.09.2211", "0.0019 ng/mL", "7.3%", {"value": "+31% vs. baseline", "style": "danger"}, "0.7%/h"]
+          ],
+          "anomaly": {
+            "label": "ANOMALIA A001-N1 // KONCENTRACJA LIMBICZNA",
+            "text": "Agent wykazuje nieproporcjonalna akumulacje w ciele migdalowatym i korze przedczolowej (obszary regulacji emocji i kontroli impulsow). Przy ogolnym tempie progresji ponizej mediany grupy, lokalna koncentracja w strukturach limbicznych przekracza 340% normy przewidywanej modelem. Korelacja z historia behawioralna podmiotu (patrz: sekcja 5) sugeruje ze Agent selektywnie kolonizuje tkanki juz wykazujace podwyzszona aktywnosc synaptyczna."
+          }
+        },
+        {
+          "title": "Prognoza Temporalna",
+          "type": "dataGrid",
+          "data": {
+            "Horyzont Degeneracji": {
+              "value": "230-280 CYKLI DOBOWYCH (skorygowany)",
+              "style": "critical"
+            },
+            "Uzasadnienie Korekty": "Wolniejsze tempo replikacji ogolnej niz mediana grupy (+20d). Jednakze koncentracja limbiczna moze prowadzic do wczesniejszej dysfunkcji behawioralnej przed osiagnieciem progu degeneracji systemowej.",
+            "Warunki Bazowe": "Poza kapsula kriogeniczna o modulacji subkomorkowej"
+          }
+        },
+        {
+          "title": "Profil Psycho-Behawioralny",
+          "type": "notes",
+          "entries": [
+            "UWAGA: Podmiot o statusie Disenfrancisto. Dane biograficzne niedostepne w rejestrach. Ponizszy profil oparty WYLACZNIE na obserwacji somatycznej i analizie behawioralnej podczas procedur diagnostycznych.",
+            "Inspekcja somatyczna wskazuje na przeszlosc w sektorze wojskowym lub pricsec: blizny charakterystyczne dla ran postrzalowych (tors, lewe ramie), muskulatura typowa dla treningu bojowego, refleksy obronne aktywne nawet w fazie czesciowej dekriogenizacji. Szacowany profil: ex-najemnik lub weteran. Dermopigmentacja o tematyce antysystemowej sugeruje dystans wobec struktur korporacyjnych.",
+            "PROFIL PSYCHOLOGICZNY (na podst. obserwacji kriogenicznej): Anomalna aktywnosc EEG w fazach krio-snu sugeruje zespol stresu pourazowego (ciężki). Wzorce neuronalne w pasmie theta wskazuja na chroniczne koszmary. Wysoka tolerancja bolu (konsekwencja treningu bojowego)."
+          ],
+          "anomaly": {
+            "label": "OSTRZEZENIE BEHAWIORALNE",
+            "text": "Ref. do ANOMALII A001-N1: koncentracja Agenta w strukturach limbicznych moze prowadzic do reaktywacji i nasilenia epizodow agresji niekontrolowanej. W RAZIE WYBUDZENIA podmiot stanowilby bezposrednie zagrozenie dla personelu. Rekomendacja AK-01: utrzymywac wylacznie w kriostaza. Wybudzenie niedopuszczalne bez pelnego zabezpieczenia fiksacyjnego klasy wojskowej. Dane o interakcji Agent/PTSD sa unikalne - kontynuowac monitoring EEG w kriostaza."
+          }
+        },
+        {
+          "title": "Dziennik Obserwacji Kriogenicznej",
+          "type": "observations",
+          "entries": [
+            {
+              "date": "[2211.09.14]",
+              "researcher": "BADACZ-REFERENT: VX-17 // Ekstrakcja diagnostyczna #7",
+              "text": "Monitoring EEG w kriostaza wykrywa anomalna aktywnosc w pasmie theta (8-12x norma) pomimo stanu krio-snu. Podmiot wykazuje wzorce aktywnosci neuronalnej niedajace sie pogodzic ze stanem glebokiego zamrozenia. Agent Psi-7C aktywnie moduluje struktury limbiczne NAWET W KRIOSTAZA. Temperatura rdzenia: -188.4°C. Implikacje: nieznane. Priorytet monitoringu: MAKSYMALNY."
+            },
+            {
+              "date": "[2211.09.06]",
+              "researcher": "BADACZ-REFERENT: MC-09 // Ekstrakcja diagnostyczna #6",
+              "text": "Podczas czesciowej dekriogenizacji na potrzeby biopsji tkanek glebokich (-40°C, podmiot nieprzytomny) odnotowano mimowolny skurcz konczyny gornej lewej o sile wystarczajacej do uszkodzenia uchwytu fiksacyjnego. Temperatura rdzenia w momencie zdarzenia: -41.2°C. Reakcja motoryczna w tych warunkach termicznych jest fizjologicznie NIEMOZLIWA. Ref: ANOMALIA A001-N1."
+            },
+            {
+              "date": "[2211.06.08]",
+              "researcher": "BADACZ-REFERENT: KR-02",
+              "text": "Podmiot wprowadzony w kriostaze awaryjnie po incydencie na promie Srebrny Pyl. Magazyn tymczasowy, okr. Chakana. Kapsula kriogeniczna: model polowy, klasa C. Parametry zamrazania w normie. Oczekiwanie na transfer do placowki docelowej."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC | KOPIOWANIE ZABRONIONE // NARUSZENIE = PROTOKOL ELIMINACYJNY",
+        "crypto": ["CRC: 8B2F-A001", "SZYFROWANIE: QE-1024/ENTANGLED", "AUTH: BIOMETRYKA-44"]
+      }
+    },
+    {
+      "id": "BETA-002",
+      "statusBar": "WEKTOR: AKTYWNY // INTERFERENCJA IMPLANTOWA",
+      "header": "[LAB/PSI-7C-BETA-002] PODMIOT TESTOWY",
+      "classification": {
+        "klasyfikacja": "OMEGA-4 // DOSTEP WYLACZNIE DLA PERSONELU UPRAWNIONEGO",
+        "typDokumentu": "KARTA OBSERWACJI PODMIOTU - PROGRAM KONWERGENCJI PSI-7C",
+        "znacznikCzasowy": "15.09.2211 14:32 UTC+1",
+        "placowka": "OSRODEK BADAWCZY [KLASYFIKACJA UTAJNIONA] // LOKALIZACJA: [ZASTRZEZONE]"
+      },
+      "warning": {
+        "text": "KONTAMINACJA AKTYWNA // AGENT PSI-7C",
+        "details": [
+          "Wektor zakazenia: dekompresja pojemnika BR-IV-0347 // prom \"Srebrny Pyl\", 08.06.2211",
+          "SZACOWANY HORYZONT TEMPORALNY: 200-250 CYKLI DOBOWYCH (KOREKTA -15d // patrz: interferencja implantowa)"
+        ]
+      },
+      "sections": [
+        {
+          "title": "Dane Identyfikacyjne Podmiotu",
+          "type": "dataGrid",
+          "data": {
+            "Oznaczenie": "BETA-002",
+            "Nr Referencyjny": "7C-19-B-002",
+            "Klasyfikacja Biologiczna": {
+              "value": "Homo sapiens [aug. egzosomatyczna] (Skontaminowany - Nosiciel Agenta Psi-7C)",
+              "style": "critical"
+            },
+            "Hematotyp": "A-Rh(+) // KONTAMINACJA POTWIERDZONA W SUROWICY",
+            "Cykl Zyciowy": "33 obiegowe",
+            "Budowa Ciala": "178cm / budowa nabita, gestosc kostna +420% (implant). Masa calkowita: 114kg (w tym ~31kg implant)",
+            "Klasyfikacja Somatyczna": "Egzosomatycznie Augmentowany (Klasa: Cybork)",
+            "Profil Zawodowy": "Analityk sledczy / Operator dochodzen terenowych (sektor nieformalny)",
+            "Dyspozycja": {
+              "value": "KRIOSTAZA KONTROLOWANA // EKSTRAKCJA DIAGNOSTYCZNA CO 14 CYKLI",
+              "style": "critical"
+            }
+          }
+        },
+        {
+          "title": "Rejestr Augmentacji Egzosomatycznych",
+          "type": "augmentations",
+          "items": [
+            {
+              "name": "Matryca Osteowzmacniajaca Pelnoustrojowa (tytanowo-ceramiczna, klasa III) // Instalacja: wojskowa, rok 2207",
+              "status": "Operacyjny",
+              "statusClass": "functional"
+            }
+          ],
+          "details": {
+            "type": "dataGrid",
+            "data": {
+              "Integralnosc Implantu": "98.7% // Brak degradacji mechanicznej",
+              "Pochodzenie": "Pakiet augmentacyjny US Army (program weteranow konfliktu lunar.)",
+              "Interferencja z Agentem": {
+                "value": "POTWIERDZONA - patrz: ANOMALIA B002-OS1",
+                "style": "critical"
+              }
+            }
+          },
+          "anomaly": {
+            "label": "ANOMALIA B002-OS1 // EFEKT KANALIZACJI IMPLANTOWEJ",
+            "text": "Agent Psi-7C nie penetruje tkanki kostnej wzmocnionej matryca tytanowo-ceramiczna (oczekiwane). Jednakze wskutek tego Agent koncentruje sie w tkankach miekkich otaczajacych implant - szczegolnie w okostnej, szpiku kostnym i tkance lacznej. Stezenie Agenta w tych strukturach jest 280% wyzsze niz u podmiotow baseline. Efekt netto: przyspieszenie progresji w tkankach miekkich przy jednoczesnej \"ochronie\" ukladu kostnego. Prognoza skorygowana o -15 dni."
+          }
+        },
+        {
+          "title": "Biomarkery Agenta Psi-7C - Seria Pomiarowa",
+          "type": "table",
+          "headers": ["Data Pomiaru", "Stezenie w Surowicy", "Integracja Genomowa", "Stez. Okoloimplantowe", "Bol Fantomowy"],
+          "rows": [
+            ["15.08.2211", "0.0006 ng/mL", "2.7%", "0.0018 ng/mL", {"value": "Brak", "style": "muted"}],
+            ["01.09.2211", "0.0017 ng/mL", "6.1%", "0.0049 ng/mL", "Sporadyczny"],
+            ["15.09.2211", "0.0028 ng/mL", "9.4%", {"value": "0.0081 ng/mL", "style": "danger"}, {"value": "Chroniczny", "style": "danger"}]
+          ]
+        },
+        {
+          "title": "Profil Psycho-Behawioralny",
+          "type": "notes",
+          "entries": [
+            "Status migracyjny: klasa D (ex-nielegalny, obywatelstwo uzyskane droga sluzby wojskowej). Weteran konfliktu orbital-lunearnego (jednostki piechoty). Potwierdzony PTSD: koszmary, unikanie, naduzywanie substancji psychoaktywnych (etanol, stymulatory syntetyczne). Historia powiazań z strukturami syndykatowymi (dlug / przysluga wobec organizacji \"Scorpiones\"). Przynaleznosc religijna: kult Santa Muerte (aktywny praktykujacy - odnotowane rytualy w pomieszczeniu kwarantannowym). Obecnie prowadzi nieformalna praktykę sledcza w sektorze Base de Cayambe."
+          ]
+        },
+        {
+          "title": "Dziennik Obserwacji Kriogenicznej",
+          "type": "observations",
+          "entries": [
+            {
+              "date": "[2211.09.13]",
+              "researcher": "BADACZ-REFERENT: YT-22 // Ekstrakcja diagnostyczna #7",
+              "text": "Termografia tkanek okoloimplantowych w fazie czesciowej dekriogenizacji (-40°C) wykazuje rozlegle ogniska hiperperfuzji. Agent Psi-7C generuje stan zapalny w tkance lacznej otaczajacej matrycę osteowzmacniajaca nawet w stanie glebokiego zamrozenia. Markery zapalne (CRP, IL-6) w ekstrahowanej surowicy: 12x norma. Uwaga: przy kolejnej ekstrakcji podmiot wykazywal mimowolne reakcje nocyceptywne (skurcze twarzy) pomimo pelnej sedacji kriogenicznej. Interpretacja: poziom bolu generowany przez stan zapalny oko-implantowy przekracza prog tlumienia krio-snu."
+            },
+            {
+              "date": "[2211.09.04]",
+              "researcher": "BADACZ-REFERENT: VX-17 // Ekstrakcja diagnostyczna #6",
+              "text": "Biopsja szpiku kostnego z kosci udowej prawej. Stezenie Agenta w szpiku: 0.034 ng/mL (17x stezenie w surowicy). Agent preferuje szpik jako srodowisko replikacji - prawdopodobnie z powodu bogatego ukrwienia i bliskosci do matrycy implantowej. Matryca osteowzmacniajaca nietknieta (integralnosc: 98.7%) ale tkanki wokol niej ulegaja przyspieszonej kolonizacji."
+            },
+            {
+              "date": "[2211.06.08]",
+              "researcher": "BADACZ-REFERENT: KR-02",
+              "text": "Podmiot wprowadzony w kriostaze awaryjnie po incydencie na promie Srebrny Pyl. Magazyn tymczasowy, okr. Chakana. UWAGA: masa podmiotu (114kg z implantem) wymagala uzycia kapsuly kriogenicznej klasy przemyslowej. Parametry zamrazania ustabilizowane po 22 minutach (norma: 8 min). Mozliwy wplyw masy implantowej na rownosc procesu krio."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC | KOPIOWANIE ZABRONIONE // NARUSZENIE = PROTOKOL ELIMINACYJNY",
+        "crypto": ["CRC: 9D4E-B002", "SZYFROWANIE: QE-1024/ENTANGLED", "AUTH: BIOMETRYKA-33"]
+      }
+    },
+    {
+      "id": "GAMMA-003",
+      "statusBar": "WEKTOR: AKTYWNY // ANOMALIA NEURONALNA",
+      "header": "[LAB/PSI-7C-GAMMA-003] PODMIOT TESTOWY",
+      "classification": {
+        "klasyfikacja": "OMEGA-4 // DOSTEP WYLACZNIE DLA PERSONELU UPRAWNIONEGO",
+        "typDokumentu": "KARTA OBSERWACJI PODMIOTU - PROGRAM KONWERGENCJI PSI-7C",
+        "znacznikCzasowy": "15.09.2211 14:32 UTC+1",
+        "placowka": "OSRODEK BADAWCZY [KLASYFIKACJA UTAJNIONA] // LOKALIZACJA: [ZASTRZEZONE]"
+      },
+      "warning": {
+        "text": "KONTAMINACJA AKTYWNA // AGENT PSI-7C",
+        "details": [
+          "Wektor zakazenia: dekompresja pojemnika BR-IV-0347 // prom \"Srebrny Pyl\", 08.06.2211",
+          "SZACOWANY HORYZONT TEMPORALNY: 190-240 CYKLI DOBOWYCH (KOREKTA -25d // patrz: anomalia neuronalna)"
+        ]
+      },
+      "sections": [
+        {
+          "title": "Dane Identyfikacyjne Podmiotu",
+          "type": "dataGrid",
+          "data": {
+            "Oznaczenie": "GAMMA-003",
+            "Nr Referencyjny": "7C-19-G-003",
+            "Klasyfikacja Biologiczna": {
+              "value": "Homo sapiens (Skontaminowany - Nosiciel Agenta Psi-7C)",
+              "style": "critical"
+            },
+            "Hematotyp": "B-Rh(-) // KONTAMINACJA POTWIERDZONA W SUROWICY",
+            "Cykl Zyciowy": "31 obiegowych",
+            "Budowa Ciala": "182cm / szczupla, BMI 19.2 (niedowaga graniczna)",
+            "Klasyfikacja Somatyczna": "Baseline // Brak modyfikacji endo- lub egzosomatycznych",
+            "Profil Zawodowy": {"value": "NIEZWERYFIKOWANY // Brak rekordu. Wyposazenie skonfiskowane (patrz: sek. 2) sugeruje specjalizacje w penetracji cyfrowej.", "style": "warning"},
+            "Dyspozycja": {
+              "value": "KRIOSTAZA KONTROLOWANA // EKSTRAKCJA DIAGNOSTYCZNA CO 14 CYKLI",
+              "style": "critical"
+            }
+          }
+        },
+        {
+          "title": "Inwentarz Wyposazenia (skonfiskowane przy przyjęciu)",
+          "type": "equipment",
+          "items": [
+            {
+              "name": "PAD klasy ofensywnej z oprogramowaniem LOD: \"Garota\" (kryptolityk), \"Miecz Gordyjski\" (dekompilator barierowy)",
+              "status": "Skonfiskowany",
+              "statusClass": "degraded"
+            },
+            {
+              "name": "Mini-ogluszacz (bron reczna, krotki zasieg)",
+              "status": "Skonfiskowany",
+              "statusClass": "degraded"
+            },
+            {
+              "name": "Zewnetrzna drzazga pamieci (zaszyfrowana, zawartosc nieodczytana)",
+              "status": "Skonfiskowany",
+              "statusClass": "degraded"
+            }
+          ]
+        },
+        {
+          "title": "Biomarkery Agenta Psi-7C - Seria Pomiarowa",
+          "type": "table",
+          "headers": ["Data Pomiaru", "Stezenie w Surowicy", "Integracja Genomowa", "Stez. w Plynie Mozgowo-Rdzeniowym", "Czas Reakcji Synaptycznej"],
+          "rows": [
+            ["15.08.2211", "0.0005 ng/mL", "2.4%", "0.0014 ng/mL", {"value": "12ms (norma)", "style": "muted"}],
+            ["01.09.2211", "0.0016 ng/mL", "5.9%", "0.0058 ng/mL", "9ms (-25%)"],
+            ["15.09.2211", "0.0031 ng/mL", "10.7%", {"value": "0.0112 ng/mL", "style": "danger"}, {"value": "6ms (-50%)", "style": "danger"}]
+          ],
+          "anomaly": {
+            "label": "ANOMALIA G003-N1 // PARADOKS NEURONALNY",
+            "text": "Podmiot wykazuje najszybsza progresje kontaminacji w grupie testowej (stezenie w plynie mozgowo-rdzeniowym 4x wyzsze niz mediana). Jednoczesnie odnotowano POPRAWE niektorych parametrow kognitywnych: czas reakcji synaptycznej spadl o 50%, test Stroopa: +22% vs. baseline. Agent Psi-7C wydaje sie WZMACNIAC aktywnosc neuronalna w fazie wczesnej kolonizacji, zanim rozpocznie sie degeneracja. Podmiot jest swiadomy zmian (\"lepiej mysle, szybciej laczę fakty\"). PRIORYTET BADAWCZY: MAKSYMALNY. Ref: RB-EXP/017, obs. z Dnia 45 (podmiot naczelny #3 wykazywal analogiczne objawy przed faza degeneracji)."
+          }
+        },
+        {
+          "title": "Profil Psycho-Behawioralny",
+          "type": "notes",
+          "entries": [
+            "UWAGA: Podmiot o niezweryfikowanej tozsamosci. Skan biometryczny (odciski + siatkówka) wykazuje CZESCIOWE dopasowanie do nieaktywnego rekordu w bazie personalnej korporacji medialnej [NAZWA UTAJNIONA] - prawdopodobnie sfalsyfikowane lub zmodyfikowane dane biometryczne. Rekord zrodlowy oznaczony jako 'dezaktywowany / podmiot zagubiony'. Status Disenfrancisto potwierdzony: brak aktywnego SIN, brak rejestru podatkowego, brak rejestru ubezpieczeniowego.",
+            "Wyposazenie skonfiskowane przy przyjęciu (PAD ofensywny, programy LOD klasy wojskowej, zaszyfrowana drzazga pamieci) sugeruje profil operatora sieci o zaawansowanych kompetencjach. Sprzet niezarejestrowany, brak numeru seryjnego na PAD (sfrezowany).",
+            "Analiza behawioralna (kriostaza): wzorce EEG sugeruja ponadnormatywna aktywnosc neuronalna nawet w stanie bazowym. Profil zgodny z wieloletnia intensywna praca w interfejsie czlowiek-siec."
+          ],
+          "noteMarker": "ADNOTACJA VX-17: Profil zawodowy podmiotu (runner/haker) stanowi potencjalne zagrozenie dla bezpieczenstwa systemow placowki W RAZIE WYBUDZENIA. Rekomendacja AK-01: podmiot utrzymywac w kriostaza bez przerw ambulatoryjnych. Wszystkie badania prowadzic na podmiocie nieprzytomnym lub w fazie czesciowej dekriogenizacji."
+        },
+        {
+          "title": "Dziennik Obserwacji Kriogenicznej",
+          "type": "observations",
+          "entries": [
+            {
+              "date": "[2211.09.12]",
+              "researcher": "BADACZ-REFERENT: MC-09 // Ekstrakcja diagnostyczna #7",
+              "text": "Pomiary EEG w kriostaza wykazuja anomalie bezprecedensowe: aktywnosc kory przedczolowej i hipokampa na poziomie 78% normy przytomnosci POMIMO temperatury rdzenia -186°C. Podmiot sni w kriostaza. Fale mózgowe sugeruja intensywna aktywnosc obliczeniowa - jakby mozg podmiotu \"pracowal\" w stanie zamrozenia. Korelacja z danymi z RB-EXP/017: podmiot naczelny #3 wykazywal analogiczne wzorce EEG miedzy dniem 30 a 45 - bezposrednio przed rozpoczeciem fazy degeneracji neuronalnej. PROGNOZA: faza wzmocnienia kognitywnego u G-003 bliska szczytu. Nastepna faza: szybka degeneracja."
+            },
+            {
+              "date": "[2211.09.01]",
+              "researcher": "BADACZ-REFERENT: VX-17 // Ekstrakcja diagnostyczna #6",
+              "text": "Punkcja ledzwiowa (plyn mozgowo-rdzeniowy): stezenie Agenta 0.0112 ng/mL - najwyzsze w grupie. Tkanka nerwowa stanowi wyrazny cel preferencyjny. Biopsja nerwu obwodowego (n. lytkowny): Agent zintegrowal sie z oslonkami mielinowymi - hipoteza: wzmocnienie transmisji synaptycznej przez modyfikacje struktury mieliny. Tymczasowy efekt uboczny: poprawa parametrow kognitywnych. Efekt docelowy (na podst. RB-EXP/017): demielinizacja i degeneracja."
+            },
+            {
+              "date": "[2211.06.08]",
+              "researcher": "BADACZ-REFERENT: KR-02",
+              "text": "Podmiot wprowadzony w kriostaze awaryjnie po incydencie na promie Srebrny Pyl. Magazyn tymczasowy, okr. Chakana. Przy wprowadzeniu w kriostaze odnotowano: na podmiocie znaleziono zewnetrzna drzazge pamieci (zaszyfrowana) oraz PAD klasy ofensywnej. Wyposazenie skonfiskowane i zabezpieczone. Ref: INW/G003-01."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC | KOPIOWANIE ZABRONIONE // NARUSZENIE = PROTOKOL ELIMINACYJNY",
+        "crypto": ["CRC: 2A7C-G003", "SZYFROWANIE: QE-1024/ENTANGLED", "AUTH: BIOMETRYKA-31"]
+      }
+    },
+    {
+      "id": "DELTA-004",
+      "statusBar": "WEKTOR: AKTYWNY // INTERFERENCJA GENOMICZNA",
+      "header": "[LAB/PSI-7C-DELTA-004] PODMIOT TESTOWY",
+      "classification": {
+        "klasyfikacja": "OMEGA-4 // DOSTEP WYLACZNIE DLA PERSONELU UPRAWNIONEGO",
+        "typDokumentu": "KARTA OBSERWACJI PODMIOTU - PROGRAM KONWERGENCJI PSI-7C",
+        "znacznikCzasowy": "15.09.2211 14:32 UTC+1",
+        "placowka": "OSRODEK BADAWCZY [KLASYFIKACJA UTAJNIONA] // LOKALIZACJA: [ZASTRZEZONE]"
+      },
+      "warning": {
+        "text": "KONTAMINACJA AKTYWNA // AGENT PSI-7C",
+        "details": [
+          "Wektor zakazenia: dekompresja pojemnika BR-IV-0347 // prom \"Srebrny Pyl\", 08.06.2211",
+          "SZACOWANY HORYZONT TEMPORALNY: NIEOKRESLONY (patrz: ANOMALIA D004-GEN1)"
+        ]
+      },
+      "sections": [
+        {
+          "title": "Dane Identyfikacyjne Podmiotu",
+          "type": "dataGrid",
+          "data": {
+            "Oznaczenie": "DELTA-004",
+            "Nr Referencyjny": "7C-19-D-004",
+            "Klasyfikacja Biologiczna": {
+              "value": "Homo sapiens [mod. endosomatyczna] (Skontaminowany - Nosiciel Agenta Psi-7C)",
+              "style": "critical"
+            },
+            "Hematotyp": "AB-Rh(+) // KONTAMINACJA POTWIERDZONA W SUROWICY",
+            "Cykl Zyciowy": "20 obiegowych (najmlodszy w grupie testowej)",
+            "Budowa Ciala": "188cm / muskulatura hipertroficzna (genmod). Masa: 97kg. Pigmentacja kranialna syntetyczna (niebieski, formacja irokez)",
+            "Klasyfikacja Somatyczna": "Endosomatycznie Zmodyfikowany (Klasa: Genmod)",
+            "Profil Zawodowy": "Propagator medialny / Nadawca sieciowy (kanal tematyczny: modyfikacje somatyczne i kultura fizyczna)",
+            "Dyspozycja": {
+              "value": "KRIOSTAZA KONTROLOWANA // EKSTRAKCJA CO 7 CYKLI // PRIORYTET BADAWCZY",
+              "style": "critical"
+            }
+          }
+        },
+        {
+          "title": "Rejestr Modyfikacji Endosomatycznych",
+          "type": "dataGrid",
+          "data": {
+            "Typ Modyfikacji": "Genomiczna rekalibracja wlokien miofilamentowych - hipertrofia kontrolowana",
+            "Parametry": "Sila izometryczna: +340% vs. baseline. Gestosc wlokien: +180%. Perfuzja kapilarna: +210%",
+            "Stabilnosc Matrycy": {
+              "value": "NIESTABILNA - Agent Psi-7C wykryty w segmentach zmodyfikowanego DNA",
+              "style": "critical"
+            }
+          }
+        },
+        {
+          "title": "Biomarkery Agenta Psi-7C - Seria Pomiarowa",
+          "type": "table",
+          "headers": ["Data Pomiaru", "Stezenie w Surowicy", "Integracja Genomowa", "Integr. z Genomem Zmod.", "Stabilnosc Genmod"],
+          "rows": [
+            ["15.08.2211", "0.0005 ng/mL", "2.3%", "1.1%", {"value": "99.2%", "style": "muted"}],
+            ["01.09.2211", "0.0013 ng/mL", "5.4%", "4.7%", "97.8%"],
+            ["15.09.2211", "0.0022 ng/mL", "8.1%", {"value": "12.3%", "style": "danger"}, {"value": "94.1%", "style": "danger"}]
+          ],
+          "anomaly": {
+            "label": "ANOMALIA D004-GEN1 // KONWERGENCJA GENOMICZNA DWUTOROWA",
+            "text": "Agent Psi-7C integruje sie z genomem zmodyfikowanym podmiotu SZYBCIEJ niz z genomem natywnym (12.3% vs. 8.1%). Zmodyfikowane sekwencje DNA wydaja sie stanowic preferowany substrat dla retrowiralnej integracji Agenta. Jednoczesnie stabilnosc samej modyfikacji genetycznej spada (94.1% i tendencja malejaca). Prognoza jest NIEOKRESLONA poniewaz: (a) przyspieszenie integracji z genomem zmodyfikowanym sugeruje krotszy horyzont, ale (b) destabilizacja genmod moze prowadzic do nieznanego dotad fenotypu interakcji Agent/modyfikacja. PIERWSZA TAKA OBSERWACJA W HISTORII PROGRAMU. Ref: AK-01 zlecil codzienny monitoring tego podmiotu."
+          }
+        },
+        {
+          "title": "Profil Psycho-Behawioralny",
+          "type": "notes",
+          "entries": [
+            "Podmiot pochodzenia metropolitalnego (New Angeles, Base de Cayambe). Struktura rodzinna: monoparentalna (matka). Ojciec zyje, kontakt minimalny (rejestr karny: pobicie). Rodzenstwo: siostra starsza, relacja antagonistyczna. Wspolzamieszkiwanie grupowe (3 wspolokatorzy). Zarejestrowane powiazanie emocjonalne (partnerka, zamieszkuje ten sam budynek). Podmiot prowadzi kanal medialny o tematyce modyfikacji somatycznych i kultury fizycznej. Profil motywacyjny: pragnienie slawy/rozpoznawalnosci, lek przed zapomnieniem i insignifikancja spoleczna."
+          ],
+          "noteMarker": "ADNOTACJA VX-17: Profil psychologiczny (na podst. dostepnych rekordow): najmlodszy w grupie, brak doswiadczen kryzysowych, silne powiazania emocjonalne (partnerka, wspolokatorzy, rodzina). W razie wybudzenia: prognozowany wysoki poziom stresu i niestabilnosci emocjonalnej. Rekomendacja AK-01: utrzymac w kriostaza. Wybudzenie niecelowe - podmiot nie wniesie wartosci obserwacyjnej w stanie przytomnym a ryzyko destabilizacji psychicznej jest wysokie."
+        },
+        {
+          "title": "Dziennik Obserwacji Kriogenicznej",
+          "type": "observations",
+          "entries": [
+            {
+              "date": "[2211.09.15]",
+              "researcher": "BADACZ-REFERENT: YT-22 // Ekstrakcja diagnostyczna #8 (CODZIENNA)",
+              "text": "Biopsja mięsnia dwuglowego ramienia prawego: Agent Psi-7C aktywnie REKONFIGURUJE zmodyfikowane wlokna miofilamentowe. Struktura wlokien zmieniona - nowy uklad wiazań miedzy aktyna a miozyna, niespotkany w literaturze. Pomiar dynamometryczny na nieprzytomnym podmiocie (stymulacja elektryczna miesnia): sila skurczu wzrosla o 7% od ostatniego pomiaru (14 dni) pomimo pelnej immobilizacji kriogenicznej. Agent wykorzystuje zmodyfikowany genom jako matrycę do tworzenia NOWYCH struktur biologicznych. Eskalacja do AK-01: NATYCHMIASTOWA."
+            },
+            {
+              "date": "[2211.09.03]",
+              "researcher": "BADACZ-REFERENT: VX-17 // Ekstrakcja diagnostyczna #6",
+              "text": "Termografia calego ciala w fazie czesciowej dekriogenizacji wykazuje rozproszony wzor hipertermii w obrebie calej muskulatury szkieletowej (temp. tkanek miesniowych: 2.4°C ponad norme krio). Agent generuje cieplo metaboliczne w tkankach zmodyfikowanych nawet w kriostaza. Stezenie Agenta w tkance mięsniowej zmodyfikowanej: 0.041 ng/mL (vs. 0.009 ng/mL w tkance natywnej - 4.5x roznica)."
+            },
+            {
+              "date": "[2211.06.08]",
+              "researcher": "BADACZ-REFERENT: KR-02",
+              "text": "Podmiot wprowadzony w kriostaze awaryjnie po incydencie na promie Srebrny Pyl. Magazyn tymczasowy, okr. Chakana. Odnotowano przy wprowadzeniu: hipertroficzna budowa ciala (genmod), pigmentacja kranialna syntetyczna (niebieski, irokez), wiek szacowany na ok. 20 cykli. Przy podmiocie: PAD, monocam, miniogluszacz. Skonfiskowane. Ref: INW/D004-01."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC | KOPIOWANIE ZABRONIONE // NARUSZENIE = PROTOKOL ELIMINACYJNY",
+        "crypto": ["CRC: 7A9F-D004", "SZYFROWANIE: QE-1024/ENTANGLED", "AUTH: BIOMETRYKA-20"]
+      }
+    },
+    {
+      "id": "EPSILON-005",
+      "statusBar": "WEKTOR: AKTYWNY // GRUPA KONTROLNA",
+      "header": "[LAB/PSI-7C-EPSILON-005] PODMIOT TESTOWY",
+      "classification": {
+        "klasyfikacja": "OMEGA-4 // DOSTEP WYLACZNIE DLA PERSONELU UPRAWNIONEGO",
+        "typDokumentu": "KARTA OBSERWACJI PODMIOTU - PROGRAM KONWERGENCJI PSI-7C",
+        "znacznikCzasowy": "15.09.2211 14:32 UTC+1",
+        "placowka": "OSRODEK BADAWCZY [KLASYFIKACJA UTAJNIONA] // LOKALIZACJA: [ZASTRZEZONE]"
+      },
+      "warning": {
+        "text": "KONTAMINACJA AKTYWNA // AGENT PSI-7C",
+        "details": [
+          "Wektor zakazenia: dekompresja pojemnika BR-IV-0347 // prom \"Srebrny Pyl\", 08.06.2211",
+          "SZACOWANY HORYZONT TEMPORALNY: 210-270 CYKLI DOBOWYCH (BRAK KOREKTY - podmiot referencyjny)"
+        ]
+      },
+      "sections": [
+        {
+          "title": "Dane Identyfikacyjne Podmiotu",
+          "type": "dataGrid",
+          "data": {
+            "Oznaczenie": "EPSILON-005",
+            "Nr Referencyjny": "7C-19-E-005",
+            "Klasyfikacja Biologiczna": {
+              "value": "Homo sapiens (Skontaminowany - Nosiciel Agenta Psi-7C)",
+              "style": "critical"
+            },
+            "Hematotyp": "0-Rh(+) // KONTAMINACJA POTWIERDZONA W SUROWICY",
+            "Cykl Zyciowy": "29 obiegowych",
+            "Budowa Ciala": "183cm / szczupla-atletyczna, BMI 22.4, bliznowce na dloniach i przedramionach (zywienie uliczne, praca fizyczna)",
+            "Klasyfikacja Somatyczna": "Baseline // Brak modyfikacji endo- lub egzosomatycznych",
+            "Profil Zawodowy": "NIEZWERYFIKOWANY // Brak rekordu. Brak dokumentow tozsamosci przy podmiocie.",
+            "Dyspozycja": {
+              "value": "KRIOSTAZA KONTROLOWANA // EKSTRAKCJA CO 14 CYKLI // PODMIOT REFERENCYJNY",
+              "style": "critical"
+            }
+          }
+        },
+        {
+          "title": "Biomarkery Agenta Psi-7C - Seria Pomiarowa",
+          "type": "table",
+          "headers": ["Data Pomiaru", "Stezenie w Surowicy", "Integracja Genomowa", "Aktywnosc Neuronalna", "Parametry Somatyczne"],
+          "rows": [
+            ["15.08.2211", "0.0005 ng/mL", "2.2%", "Norma", {"value": "Norma", "style": "muted"}],
+            ["01.09.2211", "0.0014 ng/mL", "5.1%", "+4% vs. baseline", {"value": "Norma", "style": "muted"}],
+            ["15.09.2211", "0.0024 ng/mL", "8.6%", "+9% vs. baseline", {"value": "Norma", "style": "muted"}]
+          ],
+          "noteMarker": "ADNOTACJA AK-01: Podmiot EPSILON-005 stanowi najblizsze przyblizenie \"czystej\" progresji Agenta Psi-7C u zdrowego dorosiego mezczyzny bez modyfikacji, augmentacji czy znaczacych obciazen psychologicznych. Wyznaczam ten podmiot jako REFERENCYJNY dla grupy testowej. Wszystkie odchylenia u pozostalych podmiotow beda mierzone wzgledem krzywej progresji E-005."
+        },
+        {
+          "title": "Profil Psycho-Behawioralny",
+          "type": "notes",
+          "entries": [
+            "UWAGA: Podmiot o calkowicie niezweryfikowanej tozsamosci. Brak dopasowania biometrycznego w JAKIEJKOLWIEK dostepnej bazie danych (cywilnej, wojskowej, korporacyjnej, karnej). Brak dokumentow tozsamosci przy podmiocie. Brak aktywnego SIN. Podmiot nie figuruje w zadnym rejestrze. Status: Disenfrancisto (prawdopodobny od urodzenia lub wczesnej mlodosci).",
+            "Inspekcja somatyczna: liczne bliznowce na dloniach i przedramionach (stare, wieloletnie). Brak tatuazy, brak pigmentacji syntetycznej, brak modyfikacji. Brak sladow interwencji medycznej (stomatologicznej, chirurgicznej). Profil zgodny z osoba wychowana poza systemem opieki zdrowotnej."
+          ],
+          "noteMarker": "ADNOTACJA AK-01: Podmiot wyznaczony jako REFERENCYJNY. Calkowity brak danych biograficznych stanowi jednoczesnie atut operacyjny: podmiot nie figuruje w zadnym rejestrze, brak powiazań instytucjonalnych, brak osob mogacych zglosic zaginiecie. W razie koniecznosci eliminacji: najnizsze ryzyko operacyjne w grupie. Nikt nie bedzie szukal tego podmiotu."
+        },
+        {
+          "title": "Dziennik Obserwacji Kriogenicznej",
+          "type": "observations",
+          "entries": [
+            {
+              "date": "[2211.09.13]",
+              "researcher": "BADACZ-REFERENT: MC-09 // Ekstrakcja diagnostyczna #7",
+              "text": "Podmiot wykazuje klinicznie czysta, podrecznikowa progresje Agenta Psi-7C w kriostaza. Brak anomalii, brak odchylen od modelu predykcyjnego opartego na danych z RB-EXP/017. Wszystkie biomarkery przebiegaja po krzywej zgodnej z prognoza dla baseline H. sapiens, prog minimalny. EEG w kriostaza: cisza neuronalna (norma). Termografia: rownomierna (norma). Stanowi idealna grupe kontrolna."
+            },
+            {
+              "date": "[2211.08.28]",
+              "researcher": "BADACZ-REFERENT: VX-17 // Ekstrakcja diagnostyczna #4",
+              "text": "Rutynowa ekstrakcja probek surowicy i plyny mozgowo-rdzeniowego. Brak trudnosci proceduralnych. Podmiot stabilny w kriostaza, parametry vitalne w normie krio. Bliznowce na dloniach i przedramionach (stare, liczne) potwierdzone podczas inspekcji dermatologicznej - zgodne z profilem (zycie uliczne, praca fizyczna). Brak tatuazy, brak pigmentacji syntetycznej, brak widocznych modyfikacji."
+            },
+            {
+              "date": "[2211.06.08]",
+              "researcher": "BADACZ-REFERENT: KR-02",
+              "text": "Podmiot wprowadzony w kriostaze awaryjnie po incydencie na promie Srebrny Pyl. Magazyn tymczasowy, okr. Chakana. Proces kriogenizacji: standardowy, bez komplikacji. Przy podmiocie: PAD, smartoksy, pistolet lekki. Skonfiskowane. Brak dokumentow tozsamosci (typowe dla profilu zawodowego). Ref: INW/E005-01."
+            }
+          ]
+        },
+        {
+          "title": "Analiza Porownawcza Grupy (Ref: EPSILON-005)",
+          "type": "table",
+          "headers": ["Podmiot", "Klas. Somatyczna", "Integr. Genomowa (d99)", "Odchylenie vs. E-005", "Anomalia", "Prognoza (dni)"],
+          "rows": [
+            ["ALPHA-001", "Baseline", "7.3%", "-1.3pp (wolniej)", "Koncentracja limbiczna", "230-280"],
+            ["BETA-002", "Cybork", "9.4%", {"value": "+0.8pp (szybciej)", "style": "danger"}, "Kanalizacja implantowa", "200-250"],
+            ["GAMMA-003", "Baseline", "10.7%", {"value": "+2.1pp (szybciej)", "style": "danger"}, "Paradoks neuronalny", {"value": "190-240", "style": "danger"}],
+            ["DELTA-004", "Genmod", "8.1% (nat) / 12.3% (mod)", {"value": "NIEOKRESLONE", "style": "danger"}, "Konwerg. dwutorowa", {"value": "???", "style": "danger"}],
+            ["EPSILON-005", "Baseline (REF)", "8.6%", {"value": "REFERENCYJNA", "style": "muted"}, {"value": "Brak", "style": "muted"}, "210-270"],
+            ["ZETA-006", {"value": "[UTAJNIONE]", "style": "muted"}, {"value": "[UTAJNIONE]", "style": "muted"}, {"value": "[UTAJNIONE]", "style": "muted"}, {"value": "[UTAJNIONE]", "style": "muted"}, {"value": "TRANSFER", "style": "muted"}]
+          ]
+        }
+      ],
+      "footer": {
+        "text": "PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC | KOPIOWANIE ZABRONIONE // NARUSZENIE = PROTOKOL ELIMINACYJNY",
+        "crypto": ["CRC: 5E3B-E005", "SZYFROWANIE: QE-1024/ENTANGLED", "AUTH: BIOMETRYKA-29"]
+      }
+    },
+    {
+      "id": "ZETA-006",
+      "statusBar": "TRANSFER ZAKONCZONY // DOSTEP OGRANICZONY",
+      "header": "[LAB/PSI-7C-ZETA-006] PODMIOT TESTOWY [TRANSFER]",
+      "classification": {
+        "klasyfikacja": "OMEGA-7 // DOSTEP WYLACZNIE: AK-01, KR-02",
+        "typDokumentu": "KARTA OBSERWACJI PODMIOTU - PROGRAM KONWERGENCJI PSI-7C // SKROCONA",
+        "znacznikCzasowy": "12.06.2211 19:44 UTC+1",
+        "placowka": "[KLASYFIKACJA UTAJNIONA] // PODMIOT PRZETRANSFEROWANY"
+      },
+      "warning": {
+        "text": "PODMIOT PRZETRANSFEROWANY // DOKUMENTACJA OGRANICZONA",
+        "details": [
+          "Podmiot ZETA-006 przekazany do osrodka [UTAJNIONY] na mocy DYREKTYWY AK-01/TRANSFER-006 z dnia 09.06.2211",
+          "DOSTEP DO PELNEJ DOKUMENTACJI: WYLACZNIE AK-01 // AUTORYZACJA BIOMETRYCZNA + KLUCZ KWANTOWY POZIOMU 9"
+        ]
+      },
+      "sections": [
+        {
+          "title": "Dane Identyfikacyjne Podmiotu",
+          "type": "dataGrid",
+          "data": {
+            "Oznaczenie": "ZETA-006",
+            "Nr Referencyjny": "7C-19-Z-006",
+            "Klasyfikacja Biologiczna": {"value": "[UTAJNIONE NA MOCY DYREKTYWY AK-01]", "style": "warning"},
+            "Hematotyp": "[UTAJNIONE]",
+            "Cykl Zyciowy": "[UTAJNIONE]",
+            "Klasyfikacja Somatyczna": "[UTAJNIONE]",
+            "Profil Zawodowy": "[UTAJNIONE]",
+            "Powiazanie z Programem": {"value": "[UTAJNIONE] // KLASYFIKACJA OMEGA-9", "style": "critical"},
+            "Dyspozycja": {"value": "PRZETRANSFEROWANY // OSRODEK DOCELOWY: [UTAJNIONY]", "style": "critical"}
+          }
+        },
+        {
+          "title": "Okolicznosci Ujecia",
+          "type": "notes",
+          "entries": [
+            "Podmiot ujety na pokladzie promu Srebrny Pyl w dniu 08.06.2211 przez zespol operacyjny [UTAJNIONY]. Podmiot transportowal material stanowiacy wlasnosc programu [UTAJNIONE]. Okolicznosci ujecia doprowadzily do incydentu z pojemnikiem BR-IV-0347 (patrz: RB-INC/007).",
+            "Podmiot oddzielony od pozostalych podmiotow eksponowanych (ALPHA-001 do EPSILON-005) natychmiast po ujęciu. Transport do osrodka docelowego na mocy odrębnego protokolu."
+          ],
+          "noteMarker": "ADNOTACJA KR-02: Na podmiocie ZETA-006 znaleziono kopie plikow wewnetrznych programu oraz probke materialu badawczego (Agent Psi-7C, 2.4mg, pojemnik BR-IV-0347 - uszkodzony podczas ujecia). Materialy zabezpieczone i przekazane do AK-01. Zakres wiedzy podmiotu o programie: NIEZNANY, prawdopodobnie ZNACZACY."
+        },
+        {
+          "title": "Status Medyczny",
+          "type": "dataGrid",
+          "data": {
+            "Ekspozycja na Agenta Psi-7C": {"value": "POTWIERDZONA // Bezposredni kontakt z materialem z pojemnika BR-IV-0347 w momencie uszkodzenia", "style": "critical"},
+            "Stezenie Ekspozycji": {"value": "WYZSZE NIZ U PODMIOTOW ALPHA-EPSILON // Bezposrednia bliskosc zrodla dyspersji", "style": "danger"},
+            "Kriostaza": "Podmiot wprowadzony w kriostaze w ciagu 2h od ekspozycji",
+            "Transfer": "Podmiot przetransferowany do osrodka [UTAJNIONY] w dniu 09.06.2211, 14:00 UTC+1",
+            "Dalsze Dane Medyczne": {"value": "[UTAJNIONE] // Dokumentacja prowadzona w osrodku docelowym", "style": "warning"}
+          }
+        },
+        {
+          "title": "Dziennik Obserwacji",
+          "type": "observations",
+          "entries": [
+            {
+              "date": "[2211.06.09]",
+              "researcher": "OFICER BEZPIECZENSTWA: KR-02",
+              "text": "Transfer podmiotu ZETA-006 zakonczony. Kapsula kriogeniczna z podmiotem przekazana zespolowi transferowemu. Odbiorca: [UTAJNIONY]. Dalszy monitoring podmiotu nie lezy w kompetencji tej placowki."
+            },
+            {
+              "date": "[2211.06.08]",
+              "researcher": "OFICER BEZPIECZENSTWA: KR-02",
+              "text": "Podmiot ujety, obezwladniony i wprowadzony w kriostaze. Material zabezpieczony. ADNOTACJA AK-01 (komunikacja zdalna): Podmiot ZETA-006 podlega ODREBNEMU protokolowi. Nie laczyc z grupa ALPHA-EPSILON. Nie dokumentowac szczegolow tozsamosci w systemie tej placowki. Pelna dokumentacja w rejestrze osrodka glownego."
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "text": "PROTOKOL WYGENEROWANY AUTOMATYCZNIE | SYGNATURA: LAB-AI/OMEGA-SEC | KOPIOWANIE ZABRONIONE // NARUSZENIE = PROTOKOL ELIMINACYJNY",
+        "crypto": ["CRC: F6A1-Z006", "SZYFROWANIE: QE-2048/ENTANGLED-X", "AUTH: AK-01/KR-02 ONLY"]
+      }
+    }
+  ],
+  "lockedPanel": {
+    "icon": "⚠",
+    "title": "REPOZYTORIUM BADAN EKSPERYMENTALNYCH",
+    "description": "DOSTEP WYMAGA AUTORYZACJI POZIOMU OMEGA-9 // BIOMETRYKA + KLUCZ KWANTOWY",
+    "buttonText": "DOSTEP ZABLOKOWANY // WYMAGANA AUTORYZACJA",
+    "buttonHref": "research-reports.html",
+    "meta": "[PROTOKOL: RB-EXP/SEC-9] [REKORDY: 5] [STATUS: ZASZYFROWANE]"
+  },
+  "footer": {
+    "line1": "ANDROID DATA NETWORK | REPOZYTORIUM DOKUMENTACJI LABORATORYJNEJ | SEKTOR OPERACYJNY",
+    "line2": "SYSTEM ZARZADZANIA DOKUMENTACJA // DOSTEP OGRANICZONY // NIEAUTORYZOWANE UZYTKOWANIE PODLEGA PROTOKOLOWI ELIMINACYJNEMU"
+  }
+}
