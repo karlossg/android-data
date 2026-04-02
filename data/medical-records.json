@@ -160,7 +160,7 @@
             "Hematotyp": "A-Rh(+) // KONTAMINACJA POTWIERDZONA W SUROWICY",
             "Cykl Zyciowy": "33 obiegowe",
             "Budowa Ciala": "178cm / budowa nabita, gestosc kostna +420% (implant). Masa calkowita: 114kg (w tym ~31kg implant)",
-            "Klasyfikacja Somatyczna": "Egzosomatycznie Augmentowany (Klasa: Cybork)",
+            "Klasyfikacja Somatyczna": "Egzosomatycznie Augmentowany (Klasa: Cyborg)",
             "Profil Zawodowy": "Analityk sledczy / Operator dochodzen terenowych (sektor nieformalny)",
             "Dyspozycja": {
               "value": "KRIOSTAZA KONTROLOWANA // EKSTRAKCJA DIAGNOSTYCZNA CO 14 CYKLI",
@@ -535,7 +535,7 @@
           "headers": ["Podmiot", "Klas. Somatyczna", "Integr. Genomowa (d99)", "Odchylenie vs. E-005", "Anomalia", "Prognoza (dni)"],
           "rows": [
             ["ALPHA-001", "Baseline", "7.3%", "-1.3pp (wolniej)", "Koncentracja limbiczna", "230-280"],
-            ["BETA-002", "Cybork", "9.4%", {"value": "+0.8pp (szybciej)", "style": "danger"}, "Kanalizacja implantowa", "200-250"],
+            ["BETA-002", "Cyborg", "9.4%", {"value": "+0.8pp (szybciej)", "style": "danger"}, "Kanalizacja implantowa", "200-250"],
             ["GAMMA-003", "Baseline", "10.7%", {"value": "+2.1pp (szybciej)", "style": "danger"}, "Paradoks neuronalny", {"value": "190-240", "style": "danger"}],
             ["DELTA-004", "Genmod", "8.1% (nat) / 12.3% (mod)", {"value": "NIEOKRESLONE", "style": "danger"}, "Konwerg. dwutorowa", {"value": "???", "style": "danger"}],
             ["EPSILON-005", "Baseline (REF)", "8.6%", {"value": "REFERENCYJNA", "style": "muted"}, {"value": "Brak", "style": "muted"}, "210-270"],
