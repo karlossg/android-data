@@ -12,7 +12,14 @@
       "Bash(for f:*)",
       "Bash(do echo:*)",
       "Read(//c/Users/karol/Projects/android-data/**)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Read(//dev/**)",
+      "Bash(python -m http.server 8080)",
+      "Bash(npx -y serve -l 8080 .)",
+      "Bash(identify c:/Users/karol/Projects/android-data/data/new-angeles.png)",
+      "Bash(curl -L -o c:/Users/karol/Projects/android-data/data/new-angeles.png \"https://images-cdn.fantasyflightgames.com/filer_public/c4/0f/c40f0bf2-b9ba-40a9-b31e-01dd45200c51/gns04_a4_map2.png\")",
+      "Bash(curl -L -o /tmp/na-test.jpg \"https://images-cdn.fantasyflightgames.com/filer_public/c4/0f/c40f0bf2-b9ba-40a9-b31e-01dd45200c51/gns04_a4_map2.jpg\")",
+      "Read(//tmp/**)"
     ]
   }
 }
